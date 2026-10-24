@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product details | NOIRÉ</title>
+  <link rel="stylesheet" href="../../Homepage/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="product.css">
+</head>
+<body>
+  <nav class="navbar" aria-label="Main navigation">
+    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><i class="fa-solid fa-bars"></i></button>
+    <a href="../../Homepage/index.html" class="logo">NOIRÉ</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../../Homepage/index.html">Home</a></li>
+      <li><a href="../shop.html">Shop</a></li>
+      <li class="nav-dropdown">
+        <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">Categories <i class="fa-solid fa-chevron-down small-icon"></i></button>
+        <div class="categories-menu" id="categoriesMenu">
+          <p class="categories-menu-title">EXPLORE CATEGORIES</p>
+          <a href="../shop.html?category=electronics">Electronics</a>
+          <a href="../shop.html?category=fashion">Fashion</a>
+          <a href="../shop.html?category=home">Home &amp; Living</a>
+          <a href="../shop.html?category=beauty">Beauty &amp; Personal Care</a>
+          <a href="../shop.html?category=sports">Sports &amp; Outdoors</a>
+          <a href="../shop.html?category=books">Books &amp; Toys</a>
+        </div>
+      </li>
+      <li class="seller-account" id="sellerAccountMenu" data-home-url="../../Homepage/index.html" data-register-url="../Seller registration/seller-register.html" data-login-url="../Login page/login.html" data-dashboard-url="../../Seller panel/seller-dashboard.html" data-settings-url="../../Seller panel/settings/seller-settings.html">
+        <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false" aria-controls="sellerDropdown"><span class="seller-menu-label">Become a seller</span><i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i></button>
+        <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
+          <a href="../../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
+          <a href="../../Seller panel/settings/seller-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a>
+          <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+        </div>
+      </li>
+      <li><a href="#">Contacts</a></li>
+    </ul>
+    <form class="search-box" id="searchForm" role="search">
+      <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <input type="search" placeholder="Search for products..." aria-label="Search for products">
+    </form>
+    <div class="nav-icons">
+      <button class="mobile-search" id="searchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="mobileSearchBox"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="../../Costumer panel/customer-account.html" aria-label="Profile"><i class="fa-regular fa-user"></i></a>
+      <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+      <a href="../cart/cart.html" class="bag" aria-label="Shopping cart"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span></a>
+    </div>
+    <form class="mobile-search-box" id="mobileSearchBox" role="search">
+      <input type="search" placeholder="Search for products..." aria-label="Search for products">
+      <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+  </nav>
+
+  <main class="product-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../Homepage/index.html">Home</a><span>/</span><a href="../shop.html">Shop</a><span>/</span><span id="breadcrumbCategory">Products</span><span>/</span><span id="breadcrumbProduct">Product</span></nav>
+    <div id="productMessage" class="product-message" role="status" hidden></div>
+    <section id="productView" class="product-view" hidden>
+      <div class="product-gallery">
+        <div class="product-photo" id="productPhoto">
+          <button type="button" class="gallery-arrow previous-image" id="previousImage" aria-label="Previous product image" hidden><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="product-image-stage" id="productImageStage"></div>
+          <button type="button" class="gallery-arrow next-image" id="nextImage" aria-label="Next product image" hidden><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="product-thumbnails" id="productThumbnails" aria-label="Product images"></div>
+      </div>
+      <div class="product-info">
+        <p class="product-category" id="productCategory"></p>
+        <h1 id="productName"></h1>
+        <button type="button" class="product-rating" id="productRating" aria-label="Product ratings and reviews"></button>
+        <div class="product-price-line">
+          <p class="product-price" id="productPrice"></p>
+          <del id="originalProductPrice" hidden></del>
+          <span class="discount-badge" id="discountBadge" hidden></span>
+        </div>
+        <div class="product-seller-row"><p class="product-seller">Brand: <a id="productSeller" class="product-seller-link"></a></p><span id="soldCount" hidden></span></div>
+        <hr class="product-divider">
+        <div class="product-description-row">
+          <p class="product-description" id="productDescription"></p>
+          <div class="product-social-actions" aria-label="Product actions">
+            <button type="button" class="product-social-button" id="wishlistButton" aria-label="Add to wishlist" aria-pressed="false" title="Add to wishlist">
+              <i class="fa-regular fa-heart" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="product-social-button" id="shareButton" aria-label="Share product" title="Share product">
+              <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <p class="product-social-message" id="productSocialMessage" role="status" aria-live="polite"></p>
+        <div class="product-option-pickers" id="productOptionPickers" hidden></div>
+        <div class="purchase-row">
+          <div>
+            <label class="quantity-label" for="productQuantity">Quantity</label>
+            <div class="quantity-control">
+              <button type="button" id="decreaseQuantity" aria-label="Decrease quantity">−</button>
+              <input id="productQuantity" type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity">
+              <button type="button" id="increaseQuantity" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+          <p class="product-stock" id="productStock"></p>
+        </div>
+        <div class="purchase-actions">
+          <button type="button" id="buyNow"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
+          <button type="button" id="addToCart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+        </div>
+        <p class="action-message" id="actionMessage" role="status" aria-live="polite"></p>
+        <div class="product-benefits">
+          <div><i class="fa-solid fa-shield-halved"></i><span>Demo<br>checkout</span></div>
+          <div><i class="fa-solid fa-truck-fast"></i><span>Delivery<br>details at checkout</span></div>
+          <div><i class="fa-solid fa-rotate"></i><span id="benefitReturnPolicy">Seller return<br>policy applies</span></div>
+        </div>
+      </div>
+      <aside class="delivery-panel" aria-label="Delivery and return options">
+        <section class="delivery-section">
+          <div class="delivery-heading"><h2>Delivery Options</h2><i class="fa-regular fa-circle-question" aria-hidden="true"></i></div>
+          <div class="delivery-location">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <div><strong id="deliveryLocationText">Choose your delivery area</strong><small>Delivery availability is confirmed at checkout.</small></div>
+            <button type="button" id="changeDeliveryLocation">Change</button>
+          </div>
+          <div class="delivery-option"><i class="fa-solid fa-truck" aria-hidden="true"></i><div><strong>Standard delivery</strong><small>Fee and estimate confirmed at checkout</small></div><span>Details at checkout</span></div>
+          <div class="delivery-option"><i class="fa-solid fa-shop" aria-hidden="true"></i><div><strong>Collection point</strong><small>Pickup availability is not configured in this preview</small></div><span>Not set</span></div>
+          <div class="delivery-option"><i class="fa-regular fa-money-bill-1" aria-hidden="true"></i><div><strong>Cash on delivery</strong><small>Available in this checkout demo</small></div><i class="fa-regular fa-circle-question" aria-hidden="true"></i></div>
+        </section>
+        <section class="delivery-section return-section">
+          <div class="delivery-heading"><h2>Return &amp; Warranty</h2><i class="fa-regular fa-circle-question" aria-hidden="true"></i></div>
+          <div class="delivery-option"><i class="fa-solid fa-rotate" aria-hidden="true"></i><div><strong>Return policy</strong><small id="sellerReturnPolicy">See seller policy</small></div></div>
+          <div class="delivery-option"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><div><strong>Order processing</strong><small id="sellerProcessingTime">Confirmed by seller</small></div></div>
+          <div class="delivery-option"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><div><strong>Warranty</strong><small>Contact the seller for warranty details</small></div></div>
+        </section>
+        <section class="sold-by-card" aria-label="Seller information">
+          <div class="sold-by-header">
+            <div><p class="sold-by-eyebrow">Sold by</p><a id="soldByStoreName" class="sold-by-store-name"></a></div>
+            <a id="soldByChatLink" class="sold-by-chat-link"><i class="fa-regular fa-comments" aria-hidden="true"></i> Chat Now</a>
+          </div>
+          <div class="sold-by-metrics">
+            <div><span>Positive Seller<br>Ratings</span><strong id="soldByRating">No data</strong></div>
+            <div><span>Ship on Time</span><strong id="soldByOnTime">No data</strong></div>
+            <div><span>Chat Response<br>Rate</span><strong id="soldByChatRate">No data</strong></div>
+          </div>
+          <a id="soldByStoreLink" class="sold-by-go-store"><i class="fa-solid fa-store" aria-hidden="true"></i> Go to Store</a>
+        </section>
+        <p class="delivery-demo-note">This is a marketplace preview. Delivery charges and payment processing are not connected.</p>
+      </aside>
+    </section>
+
+    <dialog class="delivery-location-dialog" id="deliveryLocationDialog">
+      <form id="deliveryLocationForm">
+        <button type="button" class="dialog-close" id="closeLocationDialog" aria-label="Close delivery location dialog">&times;</button>
+        <p class="product-category">DELIVERY AREA</p>
+        <h2>Where should we deliver?</h2>
+        <label for="deliveryCityInput">City or area</label>
+        <input id="deliveryCityInput" name="location" maxlength="100" placeholder="e.g. Karachi, Gulshan" required>
+        <p class="location-form-message" id="locationFormMessage" role="status"></p>
+        <button class="location-save-button" type="submit">Save delivery area</button>
+      </form>
+    </dialog>
+
+    <section id="reviewsSection" class="reviews-section" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">CUSTOMER FEEDBACK</p>
+        <h2>Ratings &amp; Reviews</h2>
+        <p id="reviewSummary"></p>
+      </div>
+      <div id="reviewList" class="review-list"></div>
+      <details class="write-review">
+        <summary>Write a review</summary>
+        <form id="reviewForm">
+          <label>Your name<input name="reviewer" type="text" maxlength="80" autocomplete="name" required></label>
+          <label>Rating<select name="rating" required><option value="">Choose a rating</option><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select></label>
+          <label>Your review<textarea name="comment" rows="4" maxlength="1000" required></textarea></label>
+          <button type="submit">Submit review</button>
+          <p id="reviewMessage" role="status"></p>
+        </form>
+      </details>
+    </section>
+  </main>
+  <script src="../customer-auth.js" defer></script>
+  <script src="product.js" defer></script>
+  <script src="../../account-nav.js" defer></script>
+</body>
+</html>

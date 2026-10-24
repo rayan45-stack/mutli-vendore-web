@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders | NOIRÉ Seller Panel</title>
+    <link rel="stylesheet" href="../seller-dashboard.css">
+    <link rel="stylesheet" href="orders.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="../../Homepage/index.html" class="logo">NOIRÉ</a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../../Homepage/index.html">Home</a></li>
+            <li><a href="../../Shoppage/shop.html">Shop</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">
+                    Categories
+                    <i class="fa-solid fa-chevron-down small-icon"></i>
+                </button>
+                <div class="categories-menu" id="categoriesMenu">
+                    <p class="categories-menu-title">EXPLORE CATEGORIES</p>
+                    <a href="../../Shoppage/shop.html?category=electronics">Electronics</a>
+                    <a href="../../Shoppage/shop.html?category=fashion">Fashion</a>
+                    <a href="../../Shoppage/shop.html?category=home">Home &amp; Living</a>
+                    <a href="../../Shoppage/shop.html?category=beauty">Beauty &amp; Personal Care</a>
+                    <a href="../../Shoppage/shop.html?category=sports">Sports &amp; Outdoors</a>
+                    <a href="../../Shoppage/shop.html?category=books">Books &amp; Toys</a>
+                </div>
+            </li>
+            <li class="seller-account" id="sellerAccountMenu"
+                data-home-url="../../Homepage/index.html"
+                data-register-url="../../Seller registration/seller-register.html"
+                data-login-url="../../Login page/login.html"
+                data-dashboard-url="../seller-dashboard.html"
+                data-settings-url="../settings/seller-settings.html">
+                <button type="button" id="sellerNavLink" class="seller-menu-trigger"
+                    aria-expanded="false" aria-controls="sellerDropdown">
+                    <span class="seller-menu-label">Become a seller</span>
+                    <i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i>
+                </button>
+                <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
+                    <a href="../seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
+                    <a href="../settings/seller-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a>
+                    <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+                </div>
+            </li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+
+        <form class="search-box" id="searchForm">
+            <button type="submit" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input type="search" placeholder="Search for products..." aria-label="Search for products">
+        </form>
+
+        <div class="nav-icons">
+            <button class="mobile-search" id="searchToggle" aria-label="Open search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <a href="../../Costumer panel/customer-account.html" aria-label="Profile"><i class="fa-regular fa-user"></i></a>
+            <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+            <a href="../../Shoppage/cart/cart.html" class="bag" aria-label="Shopping bag">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+
+        <form class="mobile-search-box" id="mobileSearchBox">
+            <input type="search" placeholder="Search for products..." aria-label="Search for products">
+            <button type="submit" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+    </nav>
+
+    <div class="layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="seller-info">
+                <div class="avatar" id="sellerAvatar">S</div>
+                <div>
+                    <h3 id="sellerStoreName">Seller Store</h3>
+                    <p><span class="online-dot"></span> Online</p>
+                </div>
+            </div>
+
+            <nav class="side-nav" aria-label="Seller navigation">
+                <a href="../seller-dashboard.html" class="side-link">
+                    <i class="fa-solid fa-house"></i><span>Dashboard</span>
+                </a>
+                <a href="../seller-dashboard.html#add-product" class="side-link">
+                    <i class="fa-solid fa-plus"></i><span>Add Product</span>
+                </a>
+                <a href="../My products/my-products.html" class="side-link">
+                    <i class="fa-solid fa-cube"></i><span>My Products</span>
+                </a>
+                <a href="../Orders/orders.html" class="side-link active" aria-current="page">
+                    <i class="fa-regular fa-clipboard"></i><span>Orders</span>
+                </a>
+                <a href="../Payment method/payment-settings.html" class="side-link">
+                    <i class="fa-solid fa-wallet"></i><span>Payment Settings</span>
+                </a>
+                <a href="../Product details/product-details.html" class="side-link">
+                    <i class="fa-solid fa-star"></i><span>Product Details</span>
+                </a>
+                <a href="../settings/seller-settings.html#profile-settings" class="side-link">
+                    <i class="fa-solid fa-gear"></i><span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <span>NOIRÉ</span>
+                <p>Together We Grow</p>
+            </div>
+        </aside>
+
+        <main class="main-content orders-main">
+            <section class="welcome-banner">
+                <div>
+                    <p class="eyebrow">SELLER CENTER</p>
+                    <h1>Orders</h1>
+                    <p>Manage your store’s order status and customer requests saved in this browser.</p>
+                </div>
+                <div class="today-date">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="currentDate"></span>
+                </div>
+            </section>
+
+            <section class="panel orders-panel" aria-labelledby="allOrdersHeading">
+                <div class="section-title title-row">
+                    <div>
+                        <h2 id="allOrdersHeading">All Orders</h2>
+                        <p>Respond within 24 hours. Eligible pending requests are automatically decided after the deadline; all changes remain local demo records.</p>
+                    </div>
+                    <span class="product-count" id="ordersCount">0 orders</span>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Product</th>
+                                <th>Customer</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Request / action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sellerOrdersBody"></tbody>
+                    </table>
+                </div>
+                <p class="orders-empty" id="ordersMessage" aria-live="polite"></p>
+                <div class="orders-pagination" id="ordersPagination" hidden>
+                    <p class="orders-range" id="ordersRange" aria-live="polite"></p>
+                    <div class="pagination-controls">
+                        <button type="button" id="previousOrdersPage" aria-label="Previous page">
+                            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Previous
+                        </button>
+                        <span id="ordersPageNumber" aria-live="polite"></span>
+                        <button type="button" id="nextOrdersPage" aria-label="Next page">
+                            Next <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../Orders/orders.js" defer></script>
+        <script src="../../account-nav.js" defer></script>
+</body>
+</html>

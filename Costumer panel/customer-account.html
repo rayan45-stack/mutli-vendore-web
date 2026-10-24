@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Account | NOIRÉ</title>
+  <link rel="stylesheet" href="customer-account.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar" aria-label="Main navigation">
+    <button class="hamburger" id="accountNavToggle" type="button" aria-label="Toggle menu" aria-expanded="false"
+      aria-controls="accountNavLinks">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <a class="logo" href="../Homepage/index.html" aria-label="NOIRÉ home">NOIRÉ</a>
+    <ul class="nav-links" id="accountNavLinks">
+      <li><a href="../Homepage/index.html">Home</a></li>
+      <li><a href="../Shoppage/shop.html">Shop</a></li>
+      <li class="nav-dropdown">
+        <button type="button" class="categories-toggle" id="accountCategoriesToggle" aria-expanded="false"
+          aria-controls="accountCategoriesMenu">
+          Categories <i class="fa-solid fa-chevron-down small-icon"></i>
+        </button>
+        <div class="categories-menu" id="accountCategoriesMenu">
+          <p class="categories-menu-title">EXPLORE CATEGORIES</p>
+          <a href="../Shoppage/shop.html?category=electronics">Electronics</a>
+          <a href="../Shoppage/shop.html?category=fashion">Fashion</a>
+          <a href="../Shoppage/shop.html?category=home">Home &amp; Living</a>
+          <a href="../Shoppage/shop.html?category=beauty">Beauty &amp; Personal Care</a>
+          <a href="../Shoppage/shop.html?category=sports">Sports &amp; Outdoors</a>
+          <a href="../Shoppage/shop.html?category=books">Books &amp; Toys</a>
+        </div>
+      </li>
+      <li class="seller-account" id="accountSellerMenu"
+        data-register-url="../Seller registration/seller-register.html"
+        data-login-url="../Login page/login.html"
+        data-dashboard-url="../Seller panel/seller-dashboard.html"
+        data-settings-url="../Seller panel/settings/seller-settings.html"
+        data-home-url="../Homepage/index.html">
+        <button type="button" id="sellerNavLink" class="seller-menu-trigger"
+          aria-expanded="false" aria-controls="sellerDropdown" aria-label="Open seller registration or dashboard">
+          <span class="seller-menu-label">Sell on NOIRÉ</span>
+          <i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i>
+        </button>
+        <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
+          <a href="../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i
+              class="fa-solid fa-house"></i>Dashboard</a>
+          <a href="../Seller panel/settings/seller-settings.html" data-seller-destination="settings"><i
+              class="fa-solid fa-gear"></i>Settings</a>
+          <button type="button" id="sellerLogoutButton"><i
+              class="fa-solid fa-right-from-bracket"></i>Logout</button>
+        </div>
+      </li>
+      <li><a href="#page-profile" data-goto="profile" data-focus-contact="true">Contacts</a></li>
+    </ul>
+    <form class="search-box" id="accountSearchForm" role="search">
+      <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <input type="search" id="accountSearchInput" placeholder="Search for products..."
+        aria-label="Search your account">
+    </form>
+    <div class="nav-icons">
+      <button class="mobile-search" id="accountSearchToggle" type="button" aria-label="Open search"><i
+          class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="#page-profile" data-goto="profile" aria-label="Profile"><i class="fa-regular fa-user"></i></a>
+      <a href="#page-wishlist" data-goto="wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+      <a href="#page-messages" class="customer-message-link" data-goto="messages" aria-label="Messages">
+        <i class="fa-regular fa-bell"></i><span class="customer-message-count" id="customerMessageCount" hidden></span>
+      </a>
+      <a href="../Shoppage/cart/cart.html" class="bag" aria-label="Shopping bag"><i
+          class="fa-solid fa-bag-shopping"></i><span class="cart-count" id="accountCartCount">0</span></a>
+    </div>
+    <form class="mobile-search-box" id="accountMobileSearchForm" role="search">
+      <input type="search" id="accountMobileSearchInput" placeholder="Search for products..."
+        aria-label="Search your account">
+      <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+  </nav>
+  <div class="page-wrap">
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">YOUR NOIRÉ SPACE</p>
+        <h1>My Account</h1>
+        <p class="muted">Manage your profile, orders and shopping preferences.</p>
+      </div>
+      <div class="welcome-pill"><i class="fa-regular fa-user"></i><span id="welcomeName">Hello, Customer</span></div>
+    </div>
+    <div class="account-layout">
+      <aside class="sidebar" aria-label="Account navigation">
+        <button class="user-mini-toggle" id="accountSidebarToggle" type="button" aria-expanded="false"
+          aria-controls="accountSidebarItems">
+          <i class="fa-solid fa-chevron-left account-sidebar-arrow" aria-hidden="true"></i>
+          <span class="user-mini"><span class="avatar" id="avatarInitials">CU</span><span class="user-mini-copy"><strong
+                id="sidebarName">Customer</strong><small id="sidebarEmail">Add your email</small></span></span>
+        </button>
+        <div class="account-sidebar-items" id="accountSidebarItems">
+          <p class="nav-label">MY ACCOUNT</p>
+          <button class="nav-item active" data-page="overview"><i class="fa-solid fa-border-all"></i> Account
+            overview</button>
+          <button class="nav-item" data-page="profile"><i class="fa-regular fa-id-card"></i> Manage My Account</button>
+          <button class="nav-item" data-page="orders"><i class="fa-solid fa-box"></i> My Orders <span class="nav-count"
+              id="orderCount">0</span></button>
+          <button class="nav-item" data-page="returns"><i class="fa-solid fa-arrow-rotate-left"></i> Returns &
+            Cancellations</button>
+          <button class="nav-item" data-page="reviews"><i class="fa-regular fa-star"></i> My Reviews</button>
+          <button class="nav-item" data-page="messages"><i class="fa-regular fa-comments"></i> Seller Messages
+            <span class="nav-count" id="customerSidebarMessageCount" hidden>0</span></button>
+          <button class="nav-item" data-page="wishlist"><i class="fa-regular fa-heart"></i> My Wishlist</button>
+          <button class="nav-item" data-page="stores"><i class="fa-solid fa-store"></i> Followed Stores</button>
+          <div class="sidebar-divider"></div>
+          <button class="nav-item seller-link" id="sellerSidebarLink" type="button"><i class="fa-solid fa-shop"></i> Sell on NOIRÉ <i
+              class="fa-solid fa-arrow-up-right-from-square external"></i></button>
+          <button class="nav-item" data-page="security"><i class="fa-solid fa-shield-halved"></i> Account
+            security</button>
+          <p class="sidebar-note"><i class="fa-solid fa-lock"></i> Your account details stay in this browser demo.</p>
+        </div>
+      </aside>
+      <main class="content">
+        <section class="page-panel" id="page-search">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">ACCOUNT SEARCH</p>
+              <h2>Search results</h2>
+              <p class="muted" id="accountSearchSummary"></p>
+            </div>
+          </div>
+          <div id="accountSearchResults" class="account-search-results" aria-live="polite"></div>
+        </section>
+        <section class="page-panel active" id="page-overview">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">OVERVIEW</p>
+              <h2>Welcome back, <span id="overviewName">Customer</span></h2>
+              <p class="muted">Everything you need, all in one place.</p>
+            </div><span class="status-chip"><i class="fa-solid fa-circle-check"></i> Account active</span>
+          </div>
+          <div class="stat-grid">
+            <button class="stat-card" data-goto="orders"><span class="stat-icon sand"><i
+                  class="fa-solid fa-box"></i></span><span class="stat-label">Total orders</span><strong
+                id="statOrders">0</strong><small>View your purchases <i
+                  class="fa-solid fa-arrow-right"></i></small></button>
+            <button class="stat-card" data-goto="wishlist"><span class="stat-icon rose"><i
+                  class="fa-regular fa-heart"></i></span><span class="stat-label">Wishlist items</span><strong
+                id="statWishlist">0</strong><small>Saved for later <i
+                  class="fa-solid fa-arrow-right"></i></small></button>
+            <button class="stat-card" data-goto="reviews"><span class="stat-icon green"><i
+                  class="fa-regular fa-star"></i></span><span class="stat-label">Reviews written</span><strong
+                id="statReviews">0</strong><small>Share your experience <i
+                  class="fa-solid fa-arrow-right"></i></small></button>
+            <button class="stat-card" data-goto="stores"><span class="stat-icon blue"><i
+                  class="fa-solid fa-store"></i></span><span class="stat-label">Followed stores</span><strong
+                id="statStores">0</strong><small>Your favourite sellers <i
+                  class="fa-solid fa-arrow-right"></i></small></button>
+          </div>
+          <div class="two-col">
+            <div class="card">
+              <div class="card-heading">
+                <div>
+                  <h3>Recent orders</h3>
+                  <p class="muted">Track your latest purchases.</p>
+                </div><button class="inline-link" data-goto="orders">View all</button>
+              </div>
+              <div id="recentOrders" class="recent-list"></div>
+            </div>
+            <div class="card">
+              <div class="card-heading">
+                <div>
+                  <h3>Quick actions</h3>
+                  <p class="muted">Jump straight to what you need.</p>
+                </div>
+              </div>
+              <div class="quick-actions"><button data-goto="profile"><i
+                    class="fa-regular fa-address-card"></i><span><b>Edit profile</b><small>Personal details and
+                      addresses</small></span><i class="fa-solid fa-chevron-right"></i></button><button
+                  data-goto="wishlist"><i class="fa-regular fa-heart"></i><span><b>My wishlist</b><small>Products you
+                      saved</small></span><i class="fa-solid fa-chevron-right"></i></button><button
+                  data-goto="returns"><i class="fa-solid fa-arrow-rotate-left"></i><span><b>Returns &
+                      cancellations</b><small>Manage eligible orders</small></span><i
+                    class="fa-solid fa-chevron-right"></i></button></div>
+            </div>
+          </div>
+          <div class="notice"><i class="fa-solid fa-circle-info"></i>
+            <div><b>Prototype mode</b>
+              <p>Your profile, saved addresses, cart, wishlist, followed stores, reviews and demo checkout orders are
+                stored in this browser only. No data is sent to a server.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-panel" id="page-profile">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">PERSONAL DETAILS</p>
+              <h2>Manage My Account</h2>
+              <p class="muted">Keep your contact details and delivery addresses up to date.</p>
+            </div>
+          </div>
+          <div class="card form-card">
+            <h3>My Profile</h3>
+            <form id="profileForm" class="form-grid"><label>Full name<input id="fullName" required maxlength="70"
+                  placeholder="Your full name"></label><label>Email address<input id="email" type="email" required
+                  placeholder="you@example.com"></label><label>Phone number<input id="phone" type="tel"
+                  placeholder="03XX XXXXXXX"></label><label><span>Date of birth <span class="optional">(optional)</span></span><input
+                  id="dob" type="date"></label><label class="full">Gender <select id="gender">
+                  <option value="Prefer not to say">Prefer not to say</option>
+                  <option>Female</option>
+                  <option>Male</option>
+                  <option>Other</option>
+                </select></label>
+              <div class="full form-actions"><button class="primary-btn" type="submit">Save changes</button><span
+                  id="profileMessage" class="form-message" role="status"></span></div>
+            </form>
+          </div>
+          <div class="card address-card">
+            <div class="card-heading">
+              <div>
+                <h3>Address Book</h3>
+                <p class="muted">Save addresses for faster checkout.</p>
+              </div><button id="addAddressBtn" class="secondary-btn"><i class="fa-solid fa-plus"></i> Add
+                address</button>
+            </div>
+            <div id="addressList" class="address-list"></div>
+            <form id="addressForm" class="form-grid hidden"><label>Address label<input id="addressLabel" required
+                  placeholder="Home, Work..."></label><label>Recipient name<input id="recipient" required
+                  placeholder="Full name"></label><label>Phone number<input id="addressPhone" required
+                  placeholder="03XX XXXXXXX"></label><label>City<input id="city" required
+                  placeholder="Karachi"></label><label class="full">Full address<textarea id="addressText" required
+                  rows="2" placeholder="House, street, area, landmark"></textarea></label>
+              <div class="full form-actions"><button class="primary-btn" type="submit">Save address</button><button
+                  id="cancelAddressBtn" class="secondary-btn" type="button">Cancel</button></div>
+            </form>
+          </div>
+        </section>
+
+        <section class="page-panel" id="page-orders">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">PURCHASE HISTORY</p>
+              <h2>My Orders</h2>
+              <p class="muted">See order details and check the current status of your purchases.</p>
+            </div>
+          </div>
+          <div class="tabs" id="orderTabs"><button class="tab active" data-filter="All">All orders</button><button
+              class="tab" data-filter="Demo order">Demo orders</button><button class="tab"
+              data-filter="Delivered">Delivered</button><button class="tab" data-filter="Cancelled">Cancelled</button>
+          </div>
+          <div id="ordersList" class="orders-list"></div>
+        </section>
+
+        <section class="page-panel" id="page-returns">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">AFTER-SALES</p>
+              <h2>Returns & Cancellations</h2>
+              <p class="muted">Request cancellation before delivery or request a return within the seller’s return window.</p>
+            </div>
+          </div>
+          <div class="notice"><i class="fa-solid fa-circle-info"></i>
+            <div><b>Local demo workflow</b>
+              <p>Requests are saved in this browser for the seller to review. No real pickup, cancellation processing
+                or refund is performed. If the seller does not respond within 24 hours, the request is automatically
+                approved when it is still eligible; otherwise it is rejected. The decision runs when this page is open
+                or opened again.</p>
+            </div>
+          </div>
+          <div id="returnsList" class="orders-list"></div>
+        </section>
+
+        <section class="page-panel" id="page-reviews">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">YOUR FEEDBACK</p>
+              <h2>My Reviews</h2>
+              <p class="muted">Review purchased products to help other shoppers make informed choices.</p>
+            </div>
+          </div>
+          <div class="tabs" id="reviewTabs"><button class="tab active" data-filter="Pending">Pending
+              review</button><button class="tab" data-filter="Published">Published reviews</button></div>
+          <div id="reviewsList" class="review-list"></div>
+        </section>
+
+        <section class="page-panel" id="page-wishlist">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">SAVED FOR LATER</p>
+              <h2>My Wishlist</h2>
+              <p class="muted">Keep products you like in one place.</p>
+            </div>
+          </div>
+          <div id="wishlistList" class="product-grid"></div>
+        </section>
+
+        <section class="page-panel" id="page-stores">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">YOUR FAVOURITES</p>
+              <h2>Followed Stores</h2>
+              <p class="muted">Follow shops to find them quickly and keep up with their products.</p>
+            </div>
+          </div>
+          <div id="storesList" class="store-grid"></div>
+        </section>
+
+        <section class="page-panel" id="page-messages">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">SELLER REPLIES</p>
+              <h2>Messages</h2>
+              <p class="muted">Notifications and replies from sellers you contacted.</p>
+            </div>
+          </div>
+          <p id="customerMessagesNotice" class="customer-messages-notice" role="status" aria-live="polite"></p>
+          <div id="customerMessagesList" class="customer-messages-list"></div>
+        </section>
+
+        <section class="page-panel" id="page-security">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">PROTECT YOUR ACCOUNT</p>
+              <h2>Account Security</h2>
+              <p class="muted">Demo security settings and account session information.</p>
+            </div>
+          </div>
+          <div class="card security-row"><span class="security-icon"><i class="fa-solid fa-key"></i></span>
+            <div class="security-copy"><b>Password</b>
+              <p class="muted">In a real account, change your password using a secure server-side flow.</p>
+            </div><button id="passwordInfo" class="secondary-btn">How it works</button>
+          </div>
+          <div class="card security-row"><span class="security-icon"><i class="fa-solid fa-mobile-screen"></i></span>
+            <div class="security-copy"><b>Phone and email verification</b>
+              <p class="muted">OTP verification is not connected in this prototype.</p>
+            </div><span class="status-chip neutral">Not connected</span>
+          </div>
+          <div class="card security-row"><span class="security-icon"><i class="fa-solid fa-database"></i></span>
+            <div class="security-copy"><b>Account profile data</b>
+              <p class="muted">Clear your saved profile and delivery addresses. Orders, wishlist and followed stores will remain.</p>
+            </div><button id="clearDataBtn" class="danger-btn">Clear profile data</button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer>© <span id="year"></span> NOIRÉ · Customer account prototype</footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="../Shoppage/customer-auth.js"></script>
+  <script src="customer-account.js"></script>
+  <script src="customer-messages.js"></script>
+  <script src="../account-nav.js" defer></script>
+</body>
+
+</html>

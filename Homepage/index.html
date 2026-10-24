@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOIRE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="#" class="logo">NOIRÉ</a>
+
+        <!-- Navigation -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="../Shoppage/shop.html">Shop</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false"
+                    aria-controls="categoriesMenu">
+                    Categories
+                    <i class="fa-solid fa-chevron-down small-icon"></i>
+                </button>
+
+                <div class="categories-menu" id="categoriesMenu">
+                    <p class="categories-menu-title">EXPLORE CATEGORIES</p>
+
+                    <a href="../Shoppage/shop.html?category=electronics">Electronics</a>
+
+                    <a href="../Shoppage/shop.html?category=fashion">Fashion</a>
+
+                    <a href="../Shoppage/shop.html?category=home">Home & Living</a>
+
+                    <a href="../Shoppage/shop.html?category=beauty">Beauty & Personal Care</a>
+
+                    <a href="../Shoppage/shop.html?category=sports">Sports & Outdoors</a>
+
+                    <a href="../Shoppage/shop.html?category=books">Books & Toys</a>
+                </div>
+            </li>
+            <li class="seller-account" id="sellerAccountMenu" data-home-url="index.html"
+                data-register-url="../Seller registration/seller-register.html"
+                data-login-url="../Login page/login.html" data-dashboard-url="../Seller panel/seller-dashboard.html"
+                data-settings-url="../Seller panel/settings/seller-settings.html">
+                <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false"
+                    aria-controls="sellerDropdown">
+                    <span class="seller-menu-label">Become a seller</span>
+                    <i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i>
+                </button>
+                <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
+                    <a href="../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i
+                            class="fa-solid fa-house"></i>Dashboard</a>
+                    <a href="../Seller panel/Payment method/payment-settings.html" data-seller-destination="settings"><i
+                            class="fa-solid fa-gear"></i>Settings</a>
+                    <button type="button" id="sellerLogoutButton"><i
+                            class="fa-solid fa-right-from-bracket"></i>Logout</button>
+                </div>
+            </li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form class="search-box" id="searchForm">
+            <button type="submit" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input type="search" placeholder="Search for products..." aria-label="Search for products">
+        </form>
+
+        <!-- Icons -->
+        <div class="nav-icons">
+
+            <button class="mobile-search" id="searchToggle" aria-label="Open search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <a href="../Costumer panel/customer-account.html" aria-label="Profile">
+                <i class="fa-regular fa-user"></i>
+            </a>
+
+            <a href="../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+
+            <a href="../Shoppage/cart/cart.html" class="bag" aria-label="Shopping bag">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-count">0</span>
+            </a>
+
+        </div>
+
+        <!-- Mobile Search -->
+        <form class="mobile-search-box" id="mobileSearchBox">
+            <input type="search" placeholder="Search for products..." aria-label="Search for products">
+            <button type="submit" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+    </nav>
+
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <span class="hero-label">THE NOIRÉ MARKETPLACE</span>
+
+            <h1>
+                Timeless Taste.<br>
+                Everyday Finds.
+            </h1>
+
+            <p>
+                Discover fashion, technology, home essentials
+                and more — all in one place.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#products" class="hero-btn">
+                    Explore Collections <span>→</span>
+                </a>
+
+                <a id="heroSellerLink" href="../Seller registration/seller-register.html" class="seller-link">
+                    Sell With Us
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+            <img src="../images/hero-products.png" alt="">
+        </div>
+    </section>
+
+
+
+    <section class="categories-section" id="categories">
+
+        <div class="categories-heading">
+            <span class="categories-subtitle">
+                DISCOVER SOMETHING NEW
+            </span>
+
+            <h2>Shop by Category</h2>
+
+            <p>Thoughtfully selected finds for every part of life.</p>
+        </div>
+
+        <div class="categories-grid">
+
+            <a href="../Shoppage/shop.html?category=electronics" class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-laptop"></i>
+                </div>
+                <h3>Electronics</h3>
+                <span class="category-arrow">↗</span>
+            </a>
+
+            <a href="../Shoppage/shop.html?category=fashion" class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
+                <h3>Fashion</h3>
+                <span class="category-arrow">↗</span>
+            </a>
+
+            <a href="../Shoppage/shop.html?category=home" class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+                <h3>Home & Living</h3>
+                <span class="category-arrow">↗</span>
+            </a>
+
+            <a href="../Shoppage/shop.html?category=beauty" class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-spa"></i>
+                </div>
+                <h3>Beauty</h3>
+                <span class="category-arrow">↗</span>
+            </a>
+
+            <a href="../Shoppage/shop.html?category=sports" class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <h3>Sports</h3>
+                <span class="category-arrow">↗</span>
+            </a>
+
+            <a href="../Shoppage/shop.html?category=books" class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <h3>Books & Toys</h3>
+                <span class="category-arrow">↗</span>
+            </a>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="../account-nav.js" defer></script>
+</body>
+
+</html>

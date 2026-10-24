@@ -1,0 +1,100 @@
+body{background:#f7f4ef;color:#302319}
+.store-page{max-width:1220px;margin:28px auto 70px;padding:0 22px}
+.store-back-link{display:inline-flex;align-items:center;gap:8px;margin-bottom:15px;color:#6f5b43;font-size:12px;text-decoration:none}
+.store-back-link:hover{color:#a88a55}
+.store-message{padding:18px;border:1px solid #e4d1b4;background:#fffdf9;color:#6f5b43;font-size:14px}
+.store-profile[hidden],.store-products-section[hidden]{display:none}
+.store-profile{overflow:hidden;border:1px solid #e4d1b4;background:#fffdf9}
+.store-cover{height:142px;background:linear-gradient(125deg,#493523,#70543a 58%,#a88a55)}
+.store-identity{display:flex;align-items:center;gap:17px;padding:0 24px}
+.store-avatar{display:flex;width:102px;height:102px;flex:0 0 102px;align-items:center;justify-content:center;margin-top:-39px;overflow:hidden;border:4px solid #fffdf9;border-radius:50%;background:#f3e6ce;color:#493523;font-family:'Playfair Display',Georgia,serif;font-size:40px;font-weight:600}
+.store-avatar img{width:100%;height:100%;object-fit:cover}
+.store-heading{min-width:0;flex:1;padding:14px 0}
+.store-eyebrow{margin-bottom:6px;color:#a88a55;font-size:10px;font-weight:700;letter-spacing:1.7px}
+.store-heading h1,.store-products-heading h2,.store-profile-heading h2{font-family:'Playfair Display',Georgia,serif}
+.store-heading h1{font-size:clamp(24px,3vw,34px);line-height:1.2}
+.store-meta{display:flex;flex-wrap:wrap;gap:8px 15px;margin-top:7px;color:#76634e;font-size:11px}
+.store-meta span{display:inline-flex;align-items:center;gap:6px}
+.store-meta i{color:#a88a55}
+.store-actions{display:flex;flex:0 0 auto;gap:9px}
+.store-follow-button,.store-chat-button{display:inline-flex;min-height:39px;align-items:center;justify-content:center;gap:8px;padding:0 14px;border:1px solid #493523;border-radius:4px;font-size:11px;font-weight:700;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.store-follow-button{border-color:#302319;background:linear-gradient(100deg,#352416,#24180f);color:#fff9f0;transition:none}
+.store-follow-button:hover,.store-follow-button.is-following:hover{border-color:#493323;background:#493323;color:#fff9f0}
+.store-follow-button.is-following{border-color:#302319;background:linear-gradient(100deg,#352416,#24180f);color:#fff9f0}
+.store-chat-button{border-color:#a88a55;background:transparent;color:#9a7337;font-family:inherit}
+.store-chat-button:hover{background:#f7ede2;border-color:#a88a55;color:#493523}
+.store-chat-unread{display:inline-flex;min-width:17px;height:17px;align-items:center;justify-content:center;padding:0 4px;border-radius:10px;background:#9b352b;color:#fff;font-size:9px;font-weight:700}
+.store-chat-unread[hidden]{display:none}
+.store-chat-dialog{width:min(440px,calc(100vw - 28px));max-width:none;height:min(640px,calc(100dvh - 30px));max-height:none;margin:auto;padding:0;overflow:hidden;border:1px solid #d9c9b0;background:#fffdf9;color:#302319;box-shadow:0 18px 65px rgba(48,35,25,.25)}
+.store-chat-dialog::backdrop{background:rgba(36,27,19,.52)}
+.store-chat-panel{display:flex;height:100%;min-height:0;flex-direction:column}
+.store-chat-header{display:flex;min-height:73px;align-items:center;gap:11px;padding:12px 15px;border-bottom:1px solid #e4d1b4;background:#fcf9f3}
+.store-chat-avatar{display:flex;width:42px;height:42px;flex:0 0 42px;align-items:center;justify-content:center;overflow:hidden;border-radius:50%;background:#f3e6ce;color:#493523;font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:600}
+.store-chat-avatar img{width:100%;height:100%;object-fit:cover}
+.store-chat-header .store-eyebrow{margin:0 0 3px;font-size:8px}
+.store-chat-header h2{font-family:'Playfair Display',Georgia,serif;font-size:17px;font-weight:500}
+.store-chat-close{display:flex;width:34px;height:34px;flex:0 0 34px;align-items:center;justify-content:center;margin-left:auto;border:0;background:transparent;color:#6f5b43;font-size:16px;cursor:pointer}
+.store-chat-close:hover{background:#f3e6ce}
+.store-chat-messages{display:flex;min-height:0;flex:1;flex-direction:column;gap:10px;padding:15px;overflow-y:auto;background:#f7f4ef}
+.store-chat-empty{align-self:center;margin:auto;padding:15px;color:#85735f;font-size:12px;text-align:center}
+.store-chat-message{max-width:84%;padding:9px 11px;border:1px solid #e4d1b4;background:#fffdf9}
+.store-chat-message.from-customer{align-self:flex-end;border-color:#d8c29f;background:#f3e6ce}
+.store-chat-message.from-seller{align-self:flex-start}
+.store-chat-sender{display:block;margin-bottom:4px;color:#8b6739;font-size:9px;font-weight:700}
+.store-chat-text{color:#493523;font-size:12px;line-height:1.5;overflow-wrap:anywhere;white-space:pre-wrap}
+.store-chat-time{display:block;margin-top:5px;color:#85735f;font-size:8px;text-align:right}
+.store-chat-disclaimer{padding:8px 13px;border-top:1px solid #eee7dc;background:#fcf9f3;color:#85735f;font-size:9px;line-height:1.4}
+.store-chat-form{display:flex;align-items:flex-end;gap:8px;padding:10px 12px;border-top:1px solid #e4d1b4;background:#fffdf9}
+.store-chat-form textarea{min-width:0;min-height:41px;max-height:105px;flex:1;resize:vertical;padding:10px;border:1px solid #d9c9b0;background:#fcf9f3;color:#302319;font:inherit;font-size:12px}
+.store-chat-form textarea:focus{outline:1px solid #a88a55}
+.store-chat-form button{display:flex;min-height:41px;align-items:center;justify-content:center;gap:7px;padding:0 12px;border:1px solid #302319;border-radius:4px;background:linear-gradient(100deg,#352416,#24180f);color:#fff9f0;font-size:11px;font-weight:700;cursor:pointer}
+.store-chat-form button:hover{border-color:#493323;background:#493323;color:#fff9f0}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.store-description{max-width:850px;margin:0 24px;padding:4px 0 18px;color:#5d4a38;font-size:13px;line-height:1.7;white-space:pre-wrap}
+.store-notice{min-height:0;margin:0 24px;color:#2e6e51;font-size:11px}
+.store-notice:empty{display:none}
+.store-tabs{display:flex;gap:0;margin-top:13px;padding:0 24px;border-top:1px solid #eee7dc;border-bottom:1px solid #e4d1b4;background:#fcf9f3}
+.store-tab{position:relative;display:inline-flex;min-height:48px;align-items:center;gap:7px;padding:0 17px;border:0;background:transparent;color:#76634e;font:inherit;font-size:12px;font-weight:600;cursor:pointer}
+.store-tab:after{position:absolute;right:12px;bottom:-1px;left:12px;height:2px;background:transparent;content:""}
+.store-tab.active{color:#493523}
+.store-tab.active:after{background:#a88a55}
+.store-tab>span{display:inline-flex;min-width:20px;height:19px;align-items:center;justify-content:center;padding:0 5px;border-radius:10px;background:#eee5d7;color:#6f5b43;font-size:9px}
+.store-tab-panel{padding:20px 24px 23px;background:#fffdf9}
+.store-tab-panel[hidden]{display:none}
+.store-overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.store-overview-card{display:flex;min-height:76px;align-items:center;gap:12px;padding:14px;border:1px solid #eee2d0;background:#fcf9f3}
+.store-overview-card>i{display:flex;width:36px;height:36px;flex:0 0 36px;align-items:center;justify-content:center;border-radius:50%;background:#f3e6ce;color:#8b6739;font-size:14px}
+.store-overview-card>div{display:grid;gap:4px;min-width:0}
+.store-overview-card strong{color:#493523;font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:600}
+.store-overview-card span{color:#76634e;font-size:10px}
+.store-follower-note{margin-top:9px;color:#85735f;font-size:10px}
+.store-products-section{padding-top:22px}
+.store-profile-heading{margin-bottom:14px}
+.store-profile-heading h2{font-size:22px;font-weight:500}
+.store-profile-heading>p:last-child{margin-top:5px;color:#85735f;font-size:10px;line-height:1.5}
+.store-profile-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.store-profile-metric{display:flex;min-height:112px;align-items:center;gap:12px;padding:16px;border:1px solid #e4d1b4;background:#fcf9f3}
+.store-profile-icon{display:flex;width:40px;height:40px;flex:0 0 40px;align-items:center;justify-content:center;border-radius:50%;background:#f3e6ce;color:#8b6739;font-size:15px}
+.store-profile-metric>div{display:grid;gap:5px;min-width:0}
+.store-profile-metric .metric-label{color:#76634e;font-size:10px}
+.store-profile-metric strong{color:#493523;font-family:'Playfair Display',Georgia,serif;font-size:17px;font-weight:600;overflow-wrap:anywhere}
+.store-profile-metric .metric-detail{color:#85735f;font-size:9px;line-height:1.4}
+.store-products-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:17px}
+.store-products-heading h2{font-size:clamp(24px,3vw,30px);font-weight:500}
+.store-products-heading>span{color:#76634e;font-size:11px}
+.store-products-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.store-product-card{min-width:0;padding:12px;border:1px solid #e4d1b4;background:#fffdf9;transition:transform .2s,border-color .2s}
+.store-product-card:hover{transform:translateY(-2px);border-color:#c8a870}
+.store-product-image{display:flex;aspect-ratio:1/1;align-items:center;justify-content:center;overflow:hidden;background:#f7ede2;color:#a88a55;font-size:32px}
+.store-product-image img{width:100%;height:100%;object-fit:cover}
+.store-product-name{display:-webkit-box;min-height:38px;overflow:hidden;margin:10px 0 5px;color:#302319;font-size:13px;font-weight:600;line-height:1.45;text-decoration:none;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+.store-product-name:hover{color:#a88a55}
+.store-product-category{margin-bottom:6px;color:#85735f;font-size:10px}
+.store-product-price{color:#493523;font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:600}
+.store-product-rating{margin-top:7px;color:#a88a55;font-size:10px;line-height:1.5}
+.store-product-card .store-product-link{display:flex;align-items:center;justify-content:center;margin-top:10px;padding:9px;border:1px solid #302319;border-radius:4px;background:linear-gradient(100deg,#352416,#24180f);color:#fff9f0;font-size:11px;font-weight:600;text-align:center;text-decoration:none}
+.store-product-card .store-product-link:hover{border-color:#493323;background:#493323;color:#fff9f0}
+.store-empty-products{grid-column:1/-1;padding:18px;border:1px solid #e4d1b4;background:#fffdf9;color:#76634e;font-size:13px}
+@media(max-width:900px){.store-products-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.store-identity{flex-wrap:wrap}.store-heading{padding-top:12px}.store-actions{margin:0 0 14px 119px}}
+@media(max-width:620px){.store-page{margin-top:18px;padding:0 13px}.store-cover{height:105px}.store-identity{align-items:center;gap:11px;padding:0 14px}.store-avatar{width:78px;height:78px;flex-basis:78px;margin-top:-28px;font-size:31px}.store-heading{padding:12px 0}.store-heading h1{font-size:24px}.store-meta{gap:6px 10px;font-size:9px}.store-actions{width:100%;margin:0 0 13px;gap:8px}.store-follow-button,.store-chat-button{flex:1;min-height:38px;padding:0 8px;font-size:10px}.store-description{margin:0 14px;padding-bottom:14px;font-size:12px}.store-notice{margin:0 14px 8px}.store-tabs{margin-top:8px;padding:0 8px}.store-tab{min-height:44px;flex:1;justify-content:center;padding:0 6px;font-size:11px}.store-tab-panel{padding:14px}.store-overview-grid,.store-profile-metrics{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.store-overview-card{min-height:75px;flex-direction:column;align-items:flex-start;gap:5px;padding:9px}.store-overview-card>i{width:27px;height:27px;flex-basis:27px;font-size:11px}.store-overview-card strong{font-size:17px}.store-overview-card span{font-size:9px}.store-profile-metric{min-height:112px;flex-direction:column;align-items:flex-start;gap:7px;padding:10px}.store-profile-icon{width:29px;height:29px;flex-basis:29px;font-size:11px}.store-profile-metric>div{gap:3px}.store-profile-metric .metric-label{font-size:9px}.store-profile-metric strong{font-size:13px}.store-profile-metric .metric-detail{font-size:8px}.store-products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.store-product-card{padding:9px}.store-products-heading{align-items:center}.store-products-heading>span{font-size:10px}}
+@media(max-width:360px){.store-meta{gap:5px 7px;font-size:8px}.store-profile-metrics,.store-overview-grid{gap:5px}.store-profile-metric{padding:8px}.store-profile-metric strong{font-size:12px}.store-profile-metric .metric-label{font-size:8px}.store-profile-metric .metric-detail{font-size:7px}}

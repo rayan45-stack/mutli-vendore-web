@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | NOIRÉ Seller Panel</title>
+    <link rel="stylesheet" href="../seller-dashboard.css">
+    <link rel="stylesheet" href="seller-settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="../../Homepage/index.html" class="logo">NOIRÉ</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../../Homepage/index.html">Home</a></li>
+            <li><a href="../../Shoppage/shop.html">Shop</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">
+                    Categories <i class="fa-solid fa-chevron-down small-icon"></i>
+                </button>
+                <div class="categories-menu" id="categoriesMenu">
+                    <p class="categories-menu-title">EXPLORE CATEGORIES</p>
+                    <a href="../../Shoppage/shop.html?category=electronics">Electronics</a>
+                    <a href="../../Shoppage/shop.html?category=fashion">Fashion</a>
+                    <a href="../../Shoppage/shop.html?category=home">Home &amp; Living</a>
+                    <a href="../../Shoppage/shop.html?category=beauty">Beauty &amp; Personal Care</a>
+                    <a href="../../Shoppage/shop.html?category=sports">Sports &amp; Outdoors</a>
+                    <a href="../../Shoppage/shop.html?category=books">Books &amp; Toys</a>
+                </div>
+            </li>
+            <li class="seller-account" id="sellerAccountMenu"
+                data-home-url="../../Homepage/index.html"
+                data-register-url="../../Seller registration/seller-register.html"
+                data-login-url="../../Login page/login.html"
+                data-dashboard-url="../seller-dashboard.html"
+                data-settings-url="seller-settings.html">
+                <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false" aria-controls="sellerDropdown">
+                    <span class="seller-menu-label">Become a seller</span>
+                    <i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i>
+                </button>
+                <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
+                    <a href="../seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
+                    <a href="seller-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a>
+                    <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+                </div>
+            </li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+        <form class="search-box" id="searchForm">
+            <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="search" placeholder="Search for products..." aria-label="Search for products">
+        </form>
+        <div class="nav-icons">
+            <button class="mobile-search" id="searchToggle" aria-label="Open search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <a href="../../Costumer panel/customer-account.html" aria-label="Profile"><i class="fa-regular fa-user"></i></a>
+            <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+            <a href="../../Shoppage/cart/cart.html" class="bag" aria-label="Shopping bag">
+                <i class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span>
+            </a>
+        </div>
+        <form class="mobile-search-box" id="mobileSearchBox">
+            <input type="search" placeholder="Search for products..." aria-label="Search for products">
+            <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </nav>
+
+    <div class="layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="seller-info">
+                <div class="avatar" id="sellerAvatar">S</div>
+                <div>
+                    <h3 id="sellerStoreName">Seller Store</h3>
+                    <p><span class="online-dot"></span> Online</p>
+                </div>
+            </div>
+            <nav class="side-nav" aria-label="Seller navigation">
+                <a href="../seller-dashboard.html" class="side-link"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+                <a href="../seller-dashboard.html#add-product" class="side-link"><i class="fa-solid fa-plus"></i><span>Add Product</span></a>
+                <a href="../My products/my-products.html" class="side-link"><i class="fa-solid fa-cube"></i><span>My Products</span></a>
+                <a href="../Orders/orders.html" class="side-link"><i class="fa-regular fa-clipboard"></i><span>Orders</span></a>
+                <a href="../Payment method/payment-settings.html" class="side-link"><i class="fa-solid fa-wallet"></i><span>Payment Settings</span></a>
+                <a href="../Product details/product-details.html" class="side-link"><i class="fa-solid fa-star"></i><span>Product Details</span></a>
+                <a href="#profile-settings" class="side-link active" aria-current="page"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+            </nav>
+            <div class="sidebar-bottom">
+                <span>NOIRÉ</span>
+                <p>Together We Grow</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="welcome-banner" id="overview">
+                <div>
+                    <p class="eyebrow">SELLER CENTRE</p>
+                    <h1>Seller Settings</h1>
+                    <p>Manage your store profile, preferences and more.</p>
+                </div>
+                <div class="today-date">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="currentDate">Today</span>
+                </div>
+            </section>
+            <form id="sellerSettingsForm" class="settings-layout">
+                <div class="settings-main-column">
+                    <section class="settings-card profile-card" id="profile-settings" aria-labelledby="profileSettingsHeading">
+                        <div class="settings-card-heading">
+                            <span class="settings-heading-icon"><i class="fa-solid fa-store"></i></span>
+                            <div>
+                                <h2 id="profileSettingsHeading">Store Profile</h2>
+                                <p>Update your store information, location and how customers see your brand.</p>
+                            </div>
+                        </div>
+                        <div class="profile-fields">
+                            <div class="logo-field">
+                                <label for="settingsLogo">Shop Logo</label>
+                                <div class="logo-upload-row">
+                                    <div class="logo-preview" id="logoPreview" aria-label="Store logo preview">
+                                        <span>NOIRÉ</span><small>CAFÉ</small>
+                                    </div>
+                                    <div>
+                                        <label class="upload-button" for="settingsLogo"><i class="fa-solid fa-cloud-arrow-up"></i> Choose Logo</label>
+                                        <input class="visually-hidden" type="file" id="settingsLogo" accept="image/png,image/jpeg,image/webp">
+                                        <small class="field-hint">Recommended size: 300 x 300px<br>(Format: PNG, JPG, WEBP)</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsStoreName">Shop Name <b>*</b></label>
+                                <input type="text" id="settingsStoreName" name="storeName" maxlength="100" placeholder="Enter your shop name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsCategory">Category <b>*</b></label>
+                                <select id="settingsCategory" name="storeCategory" required>
+                                    <option value="Fashion">Fashion</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Home & Living">Home &amp; Living</option>
+                                    <option value="Beauty & Personal Care">Beauty &amp; Personal Care</option>
+                                    <option value="Sports & Outdoors">Sports &amp; Outdoors</option>
+                                    <option value="Books & Toys">Books &amp; Toys</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsCity">City <b>*</b></label>
+                                <select id="settingsCity" name="storeCity" required>
+                                    <option>Karachi</option><option>Lahore</option><option>Islamabad</option>
+                                    <option>Rawalpindi</option><option>Faisalabad</option><option>Multan</option>
+                                    <option>Peshawar</option><option>Quetta</option><option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group location-field">
+                                <label for="settingsAddress">Exact Location (Address) <b>*</b></label>
+                                <div class="input-with-icon"><i class="fa-solid fa-location-dot"></i>
+                                    <input type="text" id="settingsAddress" name="storeAddress" maxlength="250" placeholder="Street, area, city" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsFullName">Owner Name <b>*</b></label>
+                                <input type="text" id="settingsFullName" name="fullName" maxlength="100" placeholder="Enter the owner's full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsEmail">Email Address <b>*</b></label>
+                                <input type="email" id="settingsEmail" name="email" placeholder="name@example.com" autocomplete="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsPhone">Phone Number <b>*</b></label>
+                                <input type="tel" id="settingsPhone" name="phone" autocomplete="tel" placeholder="03XX XXXXXXX" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="settingsDescription">Shop Description</label>
+                                <textarea id="settingsDescription" name="storeDescription" maxlength="500" placeholder="Describe your store and the products you offer."></textarea>
+                                <span class="character-count" id="descriptionCount">0/500</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="primary-btn profile-save"><i class="fa-regular fa-floppy-disk"></i> Save Changes <i class="fa-solid fa-check"></i></button>
+                        <p id="settingsMessage" class="form-message" role="status" aria-live="polite"></p>
+                    </section>
+
+                    <section class="settings-card location-card" aria-labelledby="locationHeading">
+                        <div class="settings-card-heading compact-heading">
+                            <span class="settings-heading-icon"><i class="fa-solid fa-location-dot"></i></span>
+                            <div><h2 id="locationHeading">Your Store Location on Map</h2></div>
+                        </div>
+                        <div class="location-details">
+                            <div class="map-frame">
+                                <iframe id="storeMap" title="Store location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="address-details">
+                                <strong>Address Details</strong>
+                                <p><i class="fa-solid fa-location-dot"></i><span id="mapAddress">Karachi, Pakistan</span></p>
+                                <p><i class="fa-regular fa-building"></i><span id="mapCity">Karachi</span></p>
+                                <p><i class="fa-solid fa-location-crosshairs"></i>Pakistan</p>
+                                <div class="location-note"><i class="fa-regular fa-circle-info"></i><span>This location helps customers find your store and builds trust in your brand.</span></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="settings-side-column">
+                    <section class="settings-card" aria-labelledby="notificationsHeading">
+                        <div class="settings-card-heading">
+                            <span class="settings-heading-icon"><i class="fa-regular fa-bell"></i></span>
+                            <div><h2 id="notificationsHeading">Notifications</h2><p>Choose which alerts you want to receive.</p></div>
+                        </div>
+                        <div class="setting-row">
+                            <span class="row-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+                            <div class="row-copy"><strong>New Orders</strong><small>Get notified when you receive a new order.</small></div>
+                            <label class="switch"><input type="checkbox" name="notifyOrders" checked><span></span><b class="visually-hidden">New order notifications</b></label>
+                        </div>
+                        <div class="setting-row">
+                            <span class="row-icon"><i class="fa-regular fa-circle-check"></i></span>
+                            <div class="row-copy"><strong>Product Approval</strong><small>Get notified when your product is approved or rejected.</small></div>
+                            <label class="switch"><input type="checkbox" name="notifyApprovals" checked><span></span><b class="visually-hidden">Product approval notifications</b></label>
+                        </div>
+                        <div class="setting-row">
+                            <span class="row-icon"><i class="fa-solid fa-cube"></i></span>
+                            <div class="row-copy"><strong>Low Stock</strong><small>Get notified when your product stock is running low.</small></div>
+                            <label class="switch"><input type="checkbox" name="notifyStock" checked><span></span><b class="visually-hidden">Low stock notifications</b></label>
+                        </div>
+                        <div class="setting-row">
+                            <span class="row-icon"><i class="fa-regular fa-message"></i></span>
+                            <div class="row-copy"><strong>Customer Messages</strong><small>Get notified when a customer sends you a message.</small></div>
+                            <label class="switch"><input type="checkbox" name="notifyMessages" checked><span></span><b class="visually-hidden">Customer message notifications</b></label>
+                        </div>
+                    </section>
+
+                    <section class="settings-card" aria-labelledby="shippingHeading">
+                        <div class="settings-card-heading">
+                            <span class="settings-heading-icon"><i class="fa-solid fa-truck"></i></span>
+                            <div><h2 id="shippingHeading">Shipping &amp; Returns</h2><p>Set your order processing time and return policy.</p></div>
+                        </div>
+                        <div class="form-grid shipping-fields">
+                            <div class="form-group"><label for="processingTime">Processing Time <b>*</b></label>
+                                <select id="processingTime" name="processingTime"><option>1 business day</option><option selected>2 business days</option><option>3 business days</option><option>5 business days</option><option>1 week</option></select>
+                            </div>
+                            <div class="form-group"><label for="returnPolicy">Return Policy <b>*</b></label>
+                                <select id="returnPolicy" name="returnPolicy"><option>No returns</option><option>3 days return</option><option selected>7 days return</option><option>14 days return</option><option>30 days return</option></select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="settings-card" aria-labelledby="securityHeading">
+                        <div class="settings-card-heading">
+                            <span class="settings-heading-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                            <div><h2 id="securityHeading">Security &amp; Privacy</h2><p>Keep your account safe and control your privacy preferences.</p></div>
+                        </div>
+                        <div class="security-row">
+                            <button type="button" class="outline-button" id="changePasswordButton"><i class="fa-solid fa-lock"></i> Change Password</button>
+                            <div class="row-copy"><strong>Show Contact Information</strong><small>Allow customers to see your contact details.</small></div>
+                            <label class="switch"><input type="checkbox" name="showContact" checked><span></span><b class="visually-hidden">Show contact information</b></label>
+                        </div>
+                    </section>
+
+                    <section class="settings-card" aria-labelledby="accountHeading">
+                        <div class="settings-card-heading">
+                            <span class="settings-heading-icon"><i class="fa-solid fa-sliders"></i></span>
+                            <div><h2 id="accountHeading">Account Management</h2><p>Manage your shop status and account options.</p></div>
+                        </div>
+                        <div class="account-status-row">
+                            <div class="row-copy"><strong>Shop Status</strong><small id="shopStatusText">Your shop is currently active.</small></div>
+                            <label class="switch"><input type="checkbox" name="shopActive" checked><span></span><b class="visually-hidden">Shop active</b></label>
+                        </div>
+                        <div class="account-actions">
+                            <button type="button" class="outline-button" id="resetSettingsButton"><i class="fa-solid fa-rotate-left"></i> Reset Settings</button>
+                            <button type="button" class="outline-button" id="settingsLogoutButton"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                        </div>
+                    </section>
+
+                    <a class="settings-card payment-card" href="../Payment method/payment-settings.html">
+                        <span class="settings-heading-icon"><i class="fa-solid fa-wallet"></i></span>
+                        <span><strong>Payment Settings</strong><small>Manage your payout method and banking details.</small></span>
+                        <span class="payment-link">Manage payout method <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </form>
+
+            <dialog class="password-dialog" id="passwordDialog">
+                <form id="passwordForm" method="dialog">
+                    <h2>Change Password</h2>
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" id="currentPassword" autocomplete="current-password" required>
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" minlength="8" autocomplete="new-password" required>
+                    <label for="confirmPassword">Confirm New Password</label>
+                    <input type="password" id="confirmPassword" minlength="8" autocomplete="new-password" required>
+                    <p class="form-message" id="passwordMessage" role="status"></p>
+                    <div class="dialog-actions">
+                        <button type="button" class="outline-button" id="cancelPasswordButton">Cancel</button>
+                        <button type="submit" class="primary-btn">Update Password</button>
+                    </div>
+                </form>
+            </dialog>
+        </main>
+    </div>
+    <script src="seller-settings.js" defer></script>
+    <script src="../../account-nav.js" defer></script>
+</body>
+</html>

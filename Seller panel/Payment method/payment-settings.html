@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOIRE</title>
+    <link rel="stylesheet" href="../Payment method/payment-settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+
+        <button class="hamburger" id="hamburger"
+                aria-label="Toggle menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="#" class="logo">NOIRÉ</a>
+
+        <!-- Navigation -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../../Homepage/index.html">Home</a></li>
+            <li><a href="../../Shoppage/shop.html">Shop</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">
+                    Categories
+                    <i class="fa-solid fa-chevron-down small-icon"></i>
+                </button>
+
+                <div class="categories-menu" id="categoriesMenu">
+                    <p class="categories-menu-title">EXPLORE CATEGORIES</p>
+
+                    <a href="../../Shoppage/shop.html?category=electronics">Electronics</a>
+
+                    <a href="../../Shoppage/shop.html?category=fashion">Fashion</a>
+
+                    <a href="../../Shoppage/shop.html?category=home">Home & Living</a>
+
+                    <a href="../../Shoppage/shop.html?category=beauty">Beauty & Personal Care</a>
+
+                    <a href="../../Shoppage/shop.html?category=sports">Sports & Outdoors</a>
+
+                    <a href="../../Shoppage/shop.html?category=books">Books & Toys</a>
+                </div>
+            </li>
+            <li class="seller-account" id="sellerAccountMenu"
+                data-home-url="../../Homepage/index.html"
+                data-register-url="../../Seller registration/seller-register.html"
+                data-login-url="../../Login page/login.html"
+                data-dashboard-url="../seller-dashboard.html"
+                data-settings-url="../settings/seller-settings.html">
+                <button type="button" id="sellerNavLink" class="seller-menu-trigger"
+                    aria-expanded="false" aria-controls="sellerDropdown">
+                    <span class="seller-menu-label">Become a seller</span>
+                    <i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i>
+                </button>
+                <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
+                    <a href="../seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
+                    <a href="../settings/seller-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a>
+                    <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+                </div>
+            </li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form class="search-box" id="searchForm">
+            <button type="submit" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input type="search" placeholder="Search for products..."
+                   aria-label="Search for products">
+        </form>
+
+        <!-- Icons -->
+        <div class="nav-icons">
+
+            <button class="mobile-search" id="searchToggle"
+                    aria-label="Open search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <a href="../../Costumer panel/customer-account.html" aria-label="Profile">
+                <i class="fa-regular fa-user"></i>
+            </a>
+
+            <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+
+            <a href="../../Shoppage/cart/cart.html" class="bag" aria-label="Shopping bag">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-count">0</span>
+            </a>
+
+        </div>
+
+        <!-- Mobile Search -->
+        <form class="mobile-search-box" id="mobileSearchBox">
+            <input type="search" placeholder="Search for products..."
+                   aria-label="Search for products">
+            <button type="submit" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+    </nav>
+
+    <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="seller-info">
+                <div class="avatar" id="sellerAvatar">S</div>
+        <div>
+                    <h3 id="sellerStoreName">Seller Store</h3>
+          <p><span class="online-dot"></span> Online</p>
+        </div>
+      </div>
+
+      <nav class="side-nav" aria-label="Seller navigation">
+        <a href="../seller-dashboard.html" class="side-link">
+          <i class="fa-solid fa-house"></i><span>Dashboard</span>
+        </a>
+        <a href="../seller-dashboard.html#add-product" class="side-link">
+          <i class="fa-solid fa-plus"></i><span>Add Product</span>
+        </a>
+        <a href="../My products/my-products.html" class="side-link">
+          <i class="fa-solid fa-cube"></i><span>My Products</span>
+        </a>
+        <a href="../Orders/orders.html" class="side-link">
+          <i class="fa-regular fa-clipboard"></i><span>Orders</span>
+        </a>
+        <a href="#payment-settings" class="side-link active">
+          <i class="fa-solid fa-wallet"></i><span>Payment Settings</span>
+        </a>
+        <a href="../Product details/product-details.html" class="side-link">
+          <i class="fa-solid fa-star"></i><span>Product Details</span>
+        </a>
+        <a href="../settings/seller-settings.html#profile-settings" class="side-link">
+          <i class="fa-solid fa-gear"></i><span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <span>NOIRÉ</span>
+        <p>Together We Grow</p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+        <main class="main-content">
+
+            <section class="payment-card">
+
+                <!-- Page Heading -->
+                <div class="page-header">
+
+                    <a href="../seller-dashboard.html" class="back-link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Dashboard
+                    </a>
+
+                    <div class="heading-row">
+                        <div>
+                            <h1>Payment Settings</h1>
+                            <p class="page-description">
+                                Choose how you want to receive your earnings from NOIRÉ.
+                            </p>
+                        </div>
+
+                        <div class="header-note">
+                            <span></span>
+                            <i>Your Store</i>
+                            <b>•</b>
+                            <i>Your Growth</i>
+                            <b>•</b>
+                            <strong>NOIRÉ</strong>
+                        </div>
+                    </div>
+
+                    <i class="fa-solid fa-leaf header-leaf" aria-hidden="true"></i>
+
+                </div>
+
+                <!-- Payment Form -->
+                <form id="paymentForm">
+
+                    <!-- Step 1 -->
+                    <section class="form-section">
+
+                        <h2>1. Select Payout Method</h2>
+
+                        <p class="section-description">
+                            Choose your preferred method to receive payments.
+                        </p>
+
+                        <div class="payout-options">
+
+                            <label class="payout-option selected">
+                                <input type="radio" name="payoutMethod"
+                                    value="bank" checked>
+
+                                <span class="radio-circle"></span>
+
+                                <div class="payout-content">
+                                    <i class="fa-solid fa-building-columns payout-bank"></i>
+                                    <h3>Bank Transfer</h3>
+                                    <p>Receive directly to your bank account.</p>
+                                </div>
+                            </label>
+
+                            <label class="payout-option">
+                                <input type="radio" name="payoutMethod"
+                                    value="jazzcash">
+
+                                <span class="radio-circle"></span>
+
+                                <div class="payout-content">
+                                    <div class="jazzcash-logo">JazzCash</div>
+                                    <h3>JazzCash</h3>
+                                    <p>Receive payments in your JazzCash account.</p>
+                                </div>
+                            </label>
+
+                            <label class="payout-option">
+                                <input type="radio" name="payoutMethod"
+                                    value="easypaisa">
+
+                                <span class="radio-circle"></span>
+
+                                <div class="payout-content">
+                                    <div class="easypaisa-logo">
+                                        <span></span>
+                                        <b>easypaisa</b>
+                                    </div>
+                                    <h3>Easypaisa</h3>
+                                    <p>Receive payments in your Easypaisa account.</p>
+                                </div>
+                            </label>
+
+                        </div>
+                    </section>
+
+                    <!-- Step 2 -->
+                    <section class="form-section account-section">
+
+                        <h2>2. Account Details</h2>
+
+                        <p class="section-description">
+                            Fill in the details for your selected payout method.
+                        </p>
+
+                        <div class="field-group">
+                            <label for="holderName">
+                                Account Holder Name <span>*</span>
+                            </label>
+
+                            <div class="input-wrap">
+                                <i class="fa-regular fa-user"></i>
+                                <input type="text" id="holderName"
+                                    name="holderName"
+                                    placeholder="Enter account holder name"
+                                    autocomplete="name" required>
+                            </div>
+                            <small class="field-error" id="holderNameError"></small>
+                        </div>
+
+                        <!-- Bank fields -->
+                        <div id="bankFields">
+
+                            <div class="field-grid">
+
+                                <div class="field-group">
+                                    <label for="bankName">
+                                        Bank Name <span>*</span>
+                                    </label>
+
+                                    <div class="input-wrap select-wrap">
+                                        <i class="fa-solid fa-building-columns"></i>
+
+                                        <select id="bankName" name="bankName" required>
+                                            <option value="">Select your bank</option>
+                                            <option>UBL</option>
+                                            <option>HBL</option>
+                                            <option>Meezan Bank</option>
+                                            <option>MCB Bank</option>
+                                            <option>Allied Bank</option>
+                                            <option>Bank Alfalah</option>
+                                            <option>National Bank of Pakistan</option>
+                                            <option>Faysal Bank</option>
+                                            <option>Standard Chartered</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <small class="field-error" id="bankNameError"></small>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="accountNumber">
+                                        IBAN / Account Number <span>*</span>
+                                    </label>
+
+                                    <div class="input-wrap">
+                                        <i class="fa-regular fa-credit-card"></i>
+                                        <input type="text" id="accountNumber"
+                                            name="accountNumber"
+                                            placeholder="Enter IBAN or account number"
+                                            autocomplete="off" required>
+                                    </div>
+                                    <small class="field-error"
+                                        id="accountNumberError"></small>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- JazzCash fields -->
+                        <div id="jazzcashFields" hidden>
+                            <div class="field-grid">
+                                <div class="field-group">
+                                    <label for="jazzcashNumber">
+                                        JazzCash Mobile Number <span>*</span>
+                                    </label>
+
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-mobile-screen-button"></i>
+                                        <input type="tel" id="jazzcashNumber"
+                                            name="jazzcashNumber"
+                                            placeholder="03XXXXXXXXX"
+                                            inputmode="numeric"
+                                            autocomplete="tel" disabled>
+                                    </div>
+                                    <small class="field-error" id="jazzcashNumberError"></small>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="jazzcashCnic">
+                                        CNIC Number <span>*</span>
+                                    </label>
+
+                                    <div class="input-wrap">
+                                        <i class="fa-regular fa-id-card"></i>
+                                        <input type="text" id="jazzcashCnic"
+                                            name="jazzcashCnic"
+                                            placeholder="Enter CNIC number"
+                                            autocomplete="off" disabled>
+                                    </div>
+                                    <small class="field-error" id="jazzcashCnicError"></small>
+                                </div>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="jazzcashTitle">
+                                    Account Title <span>*</span>
+                                </label>
+
+                                <div class="input-wrap">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" id="jazzcashTitle"
+                                        name="jazzcashTitle"
+                                        placeholder="Enter your JazzCash account title"
+                                        autocomplete="name" disabled>
+                                </div>
+                                <small class="field-error" id="jazzcashTitleError"></small>
+                            </div>
+                        </div>
+
+                        <!-- Easypaisa fields -->
+                        <div id="easypaisaFields" hidden>
+                            <div class="field-grid">
+                                <div class="field-group">
+                                    <label for="easypaisaNumber">
+                                        Easypaisa Mobile Number <span>*</span>
+                                    </label>
+
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-mobile-screen-button"></i>
+                                        <input type="tel" id="easypaisaNumber"
+                                            name="easypaisaNumber"
+                                            placeholder="03XXXXXXXXX"
+                                            inputmode="numeric"
+                                            autocomplete="tel" disabled>
+                                    </div>
+                                    <small class="field-error" id="easypaisaNumberError"></small>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="easypaisaCnic">
+                                        CNIC Number <span>*</span>
+                                    </label>
+
+                                    <div class="input-wrap">
+                                        <i class="fa-regular fa-id-card"></i>
+                                        <input type="text" id="easypaisaCnic"
+                                            name="easypaisaCnic"
+                                            placeholder="Enter CNIC number"
+                                            autocomplete="off" disabled>
+                                    </div>
+                                    <small class="field-error" id="easypaisaCnicError"></small>
+                                </div>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="easypaisaTitle">
+                                    Account Title <span>*</span>
+                                </label>
+
+                                <div class="input-wrap">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" id="easypaisaTitle"
+                                        name="easypaisaTitle"
+                                        placeholder="Enter your Easypaisa account title"
+                                        autocomplete="name" disabled>
+                                </div>
+                                <small class="field-error" id="easypaisaTitleError"></small>
+                            </div>
+                        </div>
+
+                        <!-- Important Notice -->
+                        <div class="important-notice">
+                            <i class="fa-solid fa-circle-info notice-icon"></i>
+
+                            <div>
+                                <h3>Important</h3>
+                                <p>
+                                    Please make sure the account details are correct.
+                                    Payments will be sent to the provided account after
+                                    your sales are confirmed. NOIRÉ is not responsible
+                                    for payments sent to incorrect details.
+                                </p>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- Step 3 -->
+                    <section class="form-section additional-section">
+
+                        <h2>
+                            3. Additional Information
+                            <span class="optional">(Optional)</span>
+                        </h2>
+
+                        <p class="section-description">
+                            You can add any extra details, if required.
+                        </p>
+
+                        <div class="input-wrap textarea-wrap">
+                            <i class="fa-regular fa-file-lines"></i>
+
+                            <textarea id="additionalInfo"
+                                name="additionalInfo"
+                                placeholder="e.g. Branch code, account type, or notes..."
+                                rows="3"></textarea>
+                        </div>
+
+                    </section>
+
+                    <!-- Form Footer -->
+                    <div class="form-footer">
+
+                        <a href="../settings/seller-settings.html#profile-settings" class="back-profile">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Back to Seller Settings
+                        </a>
+
+                        <button type="submit" class="save-btn" id="saveBtn">
+                            <span>Save Payment Details</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                    <p class="form-message" id="formMessage"
+                        role="status" aria-live="polite"></p>
+
+                </form>
+
+            </section>
+
+            <footer class="page-footer">
+                © 2026 NOIRÉ. Crafted for your business.
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="../Payment method/payment-settings.js"></script>
+    <script src="../../account-nav.js" defer></script>
+</body>
+</html>

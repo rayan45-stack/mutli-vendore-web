@@ -1,0 +1,222 @@
+.product-details-panel .section-title > div > p {
+  margin-top: 4px;
+  color: #6f5b43;
+  font-size: 11px;
+}
+
+.reviews-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  color: #6f5b43;
+  font-size: 11px;
+}
+
+.reviews-pagination[hidden] {
+  display: none;
+}
+
+.reviews-range {
+  margin: 0;
+}
+
+.reviews-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.reviews-pagination-controls button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 39px;
+  padding: 10px;
+  border: 1px solid #302319;
+  border-radius: 4px;
+  background: linear-gradient(100deg, #352416, #24180f);
+  color: #fff9f0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.reviews-pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reviews-pagination-controls button:not(:disabled):hover {
+  border-color: #493323;
+  background: #493323;
+  color: #fff9f0;
+}
+
+.reviews-pagination-controls span {
+  white-space: nowrap;
+}
+
+.product-review-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid #e4d1b4;
+}
+
+.product-review-card:first-child {
+  padding-top: 0;
+}
+
+.product-review-card:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.product-review-image,
+.product-review-placeholder {
+  width: 100%;
+  height: 180px;
+  border-radius: 4px;
+  background: #fcf9f3;
+  object-fit: cover;
+}
+
+.product-review-placeholder {
+  display: grid;
+  place-items: center;
+  color: #a88a55;
+  font-size: 32px;
+}
+
+.product-review-info {
+  min-width: 0;
+}
+
+.product-review-info h3 {
+  margin-bottom: 5px;
+  font: 500 20px/1.35 "Playfair Display", Georgia, serif;
+}
+
+.product-review-category,
+.product-review-description {
+  color: #6f5b43;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.product-review-description {
+  margin-top: 8px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.product-rating-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+  color: #493523;
+  font-size: 12px;
+}
+
+.product-rating-stars,
+.review-stars {
+  color: #a88a55;
+  letter-spacing: 2px;
+}
+
+.product-rating-empty {
+  color: #6f5b43;
+}
+
+.customer-review-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.customer-review {
+  padding: 12px;
+  border: 1px solid #e4d1b4;
+  border-radius: 4px;
+  background: #fcf9f3;
+}
+
+.customer-review-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.customer-review-heading strong {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.customer-review-date {
+  color: #6f5b43;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.customer-review p {
+  margin-top: 6px;
+  color: #493523;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.no-product-reviews {
+  color: #6f5b43;
+  font-size: 12px;
+}
+
+.product-details-empty {
+  padding: 28px 12px;
+  color: #6f5b43;
+  text-align: center;
+}
+
+.product-details-empty i {
+  display: block;
+  margin-bottom: 10px;
+  color: #a88a55;
+  font-size: 26px;
+}
+
+.product-details-empty a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #a88a55;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .reviews-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .product-review-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .product-review-image,
+  .product-review-placeholder {
+    height: 190px;
+  }
+
+  .customer-review-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | NOIRÉ</title>
+<link rel="stylesheet" href="../Homepage/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="shop.css">
+</head>
+<body>
+<nav class="navbar">
+<button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+<a href="../Homepage/index.html" class="logo">NOIRÉ</a>
+<ul class="nav-links" id="navLinks"><li><a href="../Homepage/index.html">Home</a></li><li><a href="shop.html" aria-current="page">Shop</a></li><li class="nav-dropdown"><button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false">Categories <i class="fa-solid fa-chevron-down small-icon"></i></button><div class="categories-menu"><a href="shop.html?category=electronics">Electronics</a><a href="shop.html?category=fashion">Fashion</a><a href="shop.html?category=home">Home &amp; Living</a><a href="shop.html?category=beauty">Beauty &amp; Personal Care</a><a href="shop.html?category=sports">Sports &amp; Outdoors</a><a href="shop.html?category=books">Books &amp; Toys</a></div></li><li class="seller-account" id="sellerAccountMenu" data-home-url="../Homepage/index.html" data-register-url="../Seller registration/seller-register.html" data-login-url="../Login page/login.html" data-dashboard-url="../Seller panel/seller-dashboard.html" data-settings-url="../Seller panel/settings/seller-settings.html"><button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false" aria-controls="sellerDropdown"><span class="seller-menu-label">Become a seller</span><i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i></button><div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden><a href="../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a><a href="../Seller panel/settings/seller-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a><button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button></div></li><li><a href="#">Contacts</a></li></ul>
+<form class="search-box" id="searchForm"><button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button><input type="search" placeholder="Search for products..." aria-label="Search products"></form>
+<div class="nav-icons">
+<button class="mobile-search" id="searchToggle" aria-label="Open search" aria-expanded="false"><i class="fa-solid fa-magnifying-glass"></i></button>
+<a href="../Costumer panel/customer-account.html" aria-label="Profile"><i class="fa-regular fa-user"></i></a>
+<a href="../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+<a href="cart/cart.html" class="bag" aria-label="Shopping bag"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span></a>
+</div>
+<form class="mobile-search-box" id="mobileSearchBox"><input type="search" placeholder="Search for products..." aria-label="Search products"><button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button></form>
+</nav>
+<main class="shop-page"><header class="shop-heading"><p class="eyebrow">DISCOVER NOIRÉ</p><h1 id="shopTitle">Shop All Products</h1><p>Explore products from the NOIRÉ marketplace.</p></header><div class="shop-toolbar"><input id="productSearch" type="search" placeholder="Search products..." aria-label="Search products"><select id="categoryFilter" aria-label="Filter by category"><option value="all">All categories</option><option value="electronics">Electronics</option><option value="fashion">Fashion</option><option value="home">Home &amp; Living</option><option value="beauty">Beauty &amp; Personal Care</option><option value="sports">Sports &amp; Outdoors</option><option value="books">Books &amp; Toys</option></select></div><p class="shop-note" id="shopNote">These are sample products for the front-end preview. Seller products saved in this browser may also appear here.</p><section class="shop-grid" id="shopGrid" aria-live="polite"></section></main>
+<script src="shop.js" defer></script>
+<script src="../account-nav.js" defer></script>
+</body></html>

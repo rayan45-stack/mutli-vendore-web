@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Registration</title>
+  <link rel="stylesheet" href="seller-register.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+
+        <button class="hamburger" id="hamburger"
+                aria-label="Toggle menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="#" class="logo">NOIRÉ</a>
+
+        <!-- Navigation -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../Homepage/index.html">Home</a></li>
+            <li><a href="../Shoppage/shop.html">Shop</a></li>
+            <li class="nav-dropdown">
+                <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">
+                    Categories
+                    <i class="fa-solid fa-chevron-down small-icon"></i>
+                </button>
+
+                <div class="categories-menu" id="categoriesMenu">
+                    <p class="categories-menu-title">EXPLORE CATEGORIES</p>
+
+                    <a href="../Shoppage/shop.html?category=electronics">Electronics</a>
+
+                    <a href="../Shoppage/shop.html?category=fashion">Fashion</a>
+
+                    <a href="../Shoppage/shop.html?category=home">Home & Living</a>
+
+                    <a href="../Shoppage/shop.html?category=beauty">Beauty & Personal Care</a>
+
+                    <a href="../Shoppage/shop.html?category=sports">Sports & Outdoors</a>
+
+                    <a href="../Shoppage/shop.html?category=books">Books & Toys</a>
+                </div>
+            </li>
+            <li class="seller-account" id="sellerAccountMenu"
+                data-home-url="../Homepage/index.html"
+                data-register-url="seller-register.html"
+                data-login-url="../Login page/login.html"
+                data-dashboard-url="../Seller panel/seller-dashboard.html"
+                data-settings-url="../Seller panel/settings/seller-settings.html">
+                <button type="button" id="sellerNavLink" class="seller-menu-trigger"
+                    aria-expanded="false" aria-controls="sellerDropdown">
+                    <span class="seller-menu-label">Become a seller</span>
+                    <i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i>
+                </button>
+                <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
+                    <a href="../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
+                    <a href="../Seller panel/Payment method/payment-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a>
+                    <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+                </div>
+            </li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form class="search-box" id="searchForm">
+            <button type="submit" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input type="search" placeholder="Search for products..."
+                   aria-label="Search for products">
+        </form>
+
+        <!-- Icons -->
+        <div class="nav-icons">
+
+            <button class="mobile-search" id="searchToggle"
+                    aria-label="Open search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <a href="../Costumer panel/customer-account.html" aria-label="Profile">
+                <i class="fa-regular fa-user"></i>
+            </a>
+
+            <a href="../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+
+            <a href="../Shoppage/cart/cart.html" class="bag" aria-label="Shopping bag">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-count">0</span>
+            </a>
+
+        </div>
+
+        <!-- Mobile Search -->
+        <form class="mobile-search-box" id="mobileSearchBox">
+            <input type="search" placeholder="Search for products..."
+                   aria-label="Search for products">
+            <button type="submit" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+    </nav>
+
+    <!-- Registration Section -->
+    <main class="page-container">
+
+        <section class="registration-card">
+
+            <!-- Left Promotional Panel -->
+            <aside class="brand-panel">
+
+                <div class="brand-content">
+
+                    <h1 class="brand-name">NOIRÉ</h1>
+
+                    <p class="brand-tagline">
+                        SELL <span>•</span> GROW <span>•</span> TOGETHER
+                    </p>
+
+                    <div class="gold-line"></div>
+
+                    <h2>Start Your<br>Store Today</h2>
+
+                    <p class="brand-description">
+                        Join NOIRÉ as a seller and reach more customers.
+                        Grow your business with a premium marketplace.
+                    </p>
+
+                    <div class="benefit">
+                        <span class="benefit-icon">
+                            <i class="fa-solid fa-store"></i>
+                        </span>
+
+                        <div>
+                            <h3>Easy Store Setup</h3>
+                            <p>Get your store online.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="benefit-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </span>
+
+                        <div>
+                            <h3>Grow Your Business</h3>
+                            <p>Reach more buyers.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="benefit-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </span>
+
+                        <div>
+                            <h3>Seller Dashboard</h3>
+                            <p>Manage your products and orders.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="decorative-circle"></div>
+
+                <div class="decorative-box">
+                    NOIRÉ
+                </div>
+
+            </aside>
+
+
+            <!-- Right Registration Form -->
+            <section class="form-panel">
+
+                <p class="section-label">SELLER REGISTRATION</p>
+
+                <h2>Create Your Seller Account</h2>
+
+                <p class="form-description">
+                    Fill in your details to get started as a seller on NOIRÉ.
+                </p>
+
+
+                <form class="registration-form" action="../Login page/login.html" method="get">
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span>*</span></label>
+                        <div class="input-icon"><i class="fa-regular fa-user"></i>
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span>*</span></label>
+                        <div class="input-icon"><i class="fa-regular fa-envelope"></i>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span>*</span></label>
+                        <div class="input-icon"><i class="fa-solid fa-phone"></i>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="03XX XXXXXXX"
+                                autocomplete="tel"
+                                required>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="storeName">Store Name <span>*</span></label>
+                        <div class="input-icon"><i class="fa-solid fa-store"></i>
+                            <input
+                                type="text"
+                                id="storeName"
+                                name="storeName"
+                                placeholder="e.g. Ali's Store"
+                                required>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="password">Password <span>*</span></label>
+                        <div class="input-icon"><i class="fa-solid fa-lock"></i>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a strong password"
+                                minlength="8"
+                                autocomplete="new-password"
+                                required>
+                        </div>
+                    </div>
+
+
+                    <label class="terms">
+                        <input type="checkbox" name="terms" required>
+
+                        <span>
+                            I agree to the
+                            <a href="../Login page/login.html#terms">Terms & Conditions</a>
+                            and
+                            <a href="../Login page/login.html#privacy">Privacy Policy</a>.
+                        </span>
+                    </label>
+
+
+                    <button type="submit" class="register-btn">
+                        Register as Seller
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+
+                <p class="login-prompt">
+                    Already have an account?
+                    <a href="../Login page/login.html?role=seller">Login</a>
+                </p>
+
+            </section>
+
+        </section>
+
+        <p class="page-footer">
+            YOUR STORE JOURNEY STARTS HERE <span>•</span> NOIRÉ
+        </p>
+
+    </main>
+
+    <script src="seller-registration.js"></script>
+    <script src="../account-nav.js" defer></script>
+</body>
+</html>
