@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages | NOIRÉ Seller Panel</title>
+  <link rel="stylesheet" href="../seller-dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../site-motion.css">
+</head>
+<body>
+  <nav class="navbar">
+    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <a href="../../Homepage/index.html" class="logo">NOIRÉ</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../../Homepage/index.html">Home</a></li>
+      <li><a href="../../Shoppage/shop.html">Shop</a></li>
+      <li class="nav-dropdown">
+        <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">
+          Categories <i class="fa-solid fa-chevron-down small-icon"></i>
+        </button>
+        <div class="categories-menu" id="categoriesMenu">
+          <p class="categories-menu-title">EXPLORE CATEGORIES</p>
+          <a href="../../Shoppage/shop.html?category=electronics">Electronics</a>
+          <a href="../../Shoppage/shop.html?category=fashion">Fashion</a>
+          <a href="../../Shoppage/shop.html?category=home">Home &amp; Living</a>
+          <a href="../../Shoppage/shop.html?category=beauty">Beauty &amp; Personal Care</a>
+          <a href="../../Shoppage/shop.html?category=sports">Sports &amp; Outdoors</a>
+          <a href="../../Shoppage/shop.html?category=books">Books &amp; Toys</a>
+        </div>
+      </li>
+      <li class="seller-account" id="sellerAccountMenu">
+        <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false" aria-controls="sellerDropdown">
+          <span class="seller-menu-label" id="sellerNavLabel">Seller Store</span>
+          <i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i>
+        </button>
+        <div class="seller-dropdown" id="sellerDropdown" hidden>
+          <a href="../seller-dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+          <a href="../settings/seller-settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+          <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+        </div>
+      </li>
+      <li><a href="../../Homepage/index.html#contact">Contacts</a></li>
+    </ul>
+    <form class="search-box" id="searchForm" role="search">
+      <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <input type="search" placeholder="Search for products..." aria-label="Search for products">
+    </form>
+    <div class="nav-icons">
+      <button class="mobile-search" id="searchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="mobileSearchBox">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <a href="../../Costumer panel/customer-account.html" aria-label="Profile"><i class="fa-regular fa-user"></i></a>
+      <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+      <a href="../../Shoppage/cart/cart.html" class="bag" aria-label="Shopping bag">
+        <i class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span>
+      </a>
+    </div>
+    <form class="mobile-search-box" id="mobileSearchBox" role="search">
+      <input type="search" placeholder="Search for products..." aria-label="Search for products">
+      <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+  </nav>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="seller-info">
+        <div class="avatar" id="sellerAvatar">S</div>
+        <div>
+          <h3 id="sellerStoreName">Seller Store</h3>
+          <p><span class="online-dot"></span> Online</p>
+        </div>
+      </div>
+      <nav class="side-nav" aria-label="Seller navigation">
+        <a href="../seller-dashboard.html" class="side-link"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+        <a href="../seller-dashboard.html#add-product" class="side-link"><i class="fa-solid fa-plus"></i><span>Add Product</span></a>
+        <a href="../My products/my-products.html" class="side-link"><i class="fa-solid fa-cube"></i><span>My Products</span></a>
+        <a href="../Orders/orders.html" class="side-link"><i class="fa-regular fa-clipboard"></i><span>Orders</span></a>
+        <a href="messages.html" class="side-link active" aria-current="page">
+          <i class="fa-regular fa-comments"></i><span>Messages</span>
+          <span class="message-count" id="sellerMessageCount" hidden></span>
+        </a>
+        <a href="../Payment method/payment-settings.html" class="side-link"><i class="fa-solid fa-wallet"></i><span>Payment Settings</span></a>
+        <a href="../Product details/product-details.html" class="side-link"><i class="fa-solid fa-star"></i><span>Product Details</span></a>
+        <a href="../settings/seller-settings.html#profile-settings" class="side-link"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+      <div class="sidebar-bottom"><span>NOIRÉ</span><p>Together We Grow</p></div>
+    </aside>
+
+    <main class="main-content">
+      <section class="welcome-banner">
+        <div>
+          <p class="eyebrow">SELLER CENTER</p>
+          <h1>Customer Messages</h1>
+          <p>Read customer messages and reply to their conversations.</p>
+        </div>
+        <div class="today-date"><i class="fa-regular fa-calendar"></i><span id="currentDate"></span></div>
+      </section>
+      <section class="panel seller-inbox" aria-labelledby="sellerInboxHeading">
+        <div class="section-title">
+          <h2 id="sellerInboxHeading">Your Conversations</h2>
+          <p>Unread customer messages are counted beside Messages in your sidebar.</p>
+        </div>
+        <p class="inbox-notice" id="sellerInboxNotice" role="status" aria-live="polite"></p>
+        <div class="seller-inbox-layout">
+          <div class="inbox-conversations" id="sellerConversations" aria-label="Customer conversations"></div>
+          <section class="inbox-thread" aria-label="Selected conversation">
+            <h3 id="sellerConversationTitle">Select a conversation</h3>
+            <div class="inbox-messages" id="sellerConversationMessages" role="log" aria-live="polite"></div>
+            <form class="inbox-reply-form" id="sellerReplyForm">
+              <label class="visually-hidden" for="sellerReplyInput">Write a reply</label>
+              <textarea id="sellerReplyInput" rows="2" maxlength="1000" placeholder="Write a reply..." required disabled></textarea>
+              <button type="submit" id="sellerReplyButton" disabled><i class="fa-solid fa-paper-plane"></i> Reply</button>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../seller-chat.js" defer></script>
+  <script src="../seller-message-count.js" defer></script>
+  <script src="../../account-nav.js" defer></script>
+  <script src="../../site-motion.js" defer></script>
+</body>
+</html>

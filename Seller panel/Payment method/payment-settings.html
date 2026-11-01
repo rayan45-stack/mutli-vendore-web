@@ -6,6 +6,7 @@
     <title>NOIRE</title>
     <link rel="stylesheet" href="../Payment method/payment-settings.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../site-motion.css">
 </head>
 <body>
     <nav class="navbar">
@@ -129,6 +130,10 @@
         </a>
         <a href="../Orders/orders.html" class="side-link">
           <i class="fa-regular fa-clipboard"></i><span>Orders</span>
+        </a>
+        <a href="../Messages/messages.html" class="side-link">
+          <i class="fa-regular fa-comments"></i><span>Messages</span>
+          <span class="message-count" hidden></span>
         </a>
         <a href="#payment-settings" class="side-link active">
           <i class="fa-solid fa-wallet"></i><span>Payment Settings</span>
@@ -487,6 +492,8 @@
     </div>
 
     <script src="../Payment method/payment-settings.js"></script>
+    <script src="../seller-message-count.js" defer></script>
     <script src="../../account-nav.js" defer></script>
+    <script src="../../site-motion.js" defer></script>
 </body>
 </html>

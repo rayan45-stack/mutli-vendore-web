@@ -104,7 +104,16 @@ const hamburger = document.getElementById("hamburger");
 
         if (loginRole === "customer") {
             const customerEmail = localStorage.getItem("noireCustomerOnboardingEmail") ||
-                localStorage.getItem("noireCustomerLastEmail") || "";
+                localStorage.getItem("noireCustomerLastEmail") ||
+                (() => {
+                    try {
+                        const savedAccount = JSON.parse(localStorage.getItem("noireCustomerAccount_v1") || "null");
+                        return savedAccount?.profile?.email || "";
+                    } catch (error) {
+                        console.error("Unable to read the saved customer profile email.", error);
+                        return "";
+                    }
+                })();
             try {
                 const customers = JSON.parse(localStorage.getItem(CUSTOMERS_KEY) || "[]");
                 const customer = Array.isArray(customers) && customers.find(account =>
@@ -211,7 +220,7 @@ const hamburger = document.getElementById("hamburger");
                         alert("Invalid customer email or password. Please try again.");
                         return;
                     }
-                    const profile = {
+                    let profile = {
                         name: matchedCustomer.fullName || "",
                         email: matchedCustomer.email,
                         phone: matchedCustomer.phone || "",
@@ -221,9 +230,11 @@ const hamburger = document.getElementById("hamburger");
                     let savedAddresses = [];
                     try {
                         const savedAccount = JSON.parse(localStorage.getItem("noireCustomerAccount_v1") || "null");
-                        if (savedAccount && String(savedAccount.profile?.email || "").trim().toLowerCase() === email &&
-                            Array.isArray(savedAccount.addresses)) {
-                            savedAddresses = savedAccount.addresses;
+                        if (savedAccount && String(savedAccount.profile?.email || "").trim().toLowerCase() === email) {
+                            profile = { ...profile, ...savedAccount.profile, email: matchedCustomer.email };
+                            if (Array.isArray(savedAccount.addresses)) {
+                                savedAddresses = savedAccount.addresses;
+                            }
                         }
                     } catch (error) {
                         alert("Saved customer profile data could not be read. Please check browser storage.");
@@ -239,6 +250,8 @@ const hamburger = document.getElementById("hamburger");
                         loggedInAt: new Date().toISOString()
                     }));
                     localStorage.setItem("noireCustomerLastEmail", email);
+                    const isFirstCustomerLogin =
+                        localStorage.getItem("noireCustomerOnboardingEmail") === email;
                     localStorage.removeItem("noireCustomerOnboardingEmail");
                     localStorage.removeItem("noireLoginAccountType");
                     const returnTo = sessionStorage.getItem("noireCustomerPostLoginReturn") ||
@@ -255,7 +268,9 @@ const hamburger = document.getElementById("hamburger");
                             console.error("Unable to return to the requested page after customer login.", error);
                         }
                     }
-                    window.location.href = "../Costumer panel/customer-account.html#addresses";
+                    window.location.href = isFirstCustomerLogin
+                        ? "../Costumer panel/customer-account.html#addresses"
+                        : "../Costumer panel/customer-account.html#profile";
                     return;
                 }
 

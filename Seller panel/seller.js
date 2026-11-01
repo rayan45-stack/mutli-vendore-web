@@ -140,6 +140,88 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  const recentOrdersBody = document.getElementById("recentOrdersBody");
+  const totalOrders = document.getElementById("totalOrders");
+  function renderRecentOrders() {
+    if (!recentOrdersBody && !totalOrders) return;
+    try {
+      const savedOrders = JSON.parse(localStorage.getItem("noireCustomerOrders") || "[]");
+      if (!Array.isArray(savedOrders)) throw new Error("Saved order data is invalid.");
+      const sellerEmail = String(activeSeller.email).trim().toLowerCase();
+      const sellerItems = savedOrders
+        .filter(order => order && Array.isArray(order.items))
+        .flatMap(order => order.items
+          .filter(item => item &&
+            String(item.sellerEmail || "").trim().toLowerCase() === sellerEmail)
+          .map(item => ({ order, item })))
+        .sort((first, second) =>
+          (Date.parse(second.order.createdAt || second.order.date || "") || 0) -
+          (Date.parse(first.order.createdAt || first.order.date || "") || 0));
+
+      if (totalOrders) totalOrders.textContent = String(sellerItems.length);
+      if (!recentOrdersBody) return;
+      const recentItems = sellerItems.slice(0, 5);
+      recentOrdersBody.replaceChildren();
+      if (!recentItems.length) {
+        const row = document.createElement("tr");
+        const cell = document.createElement("td");
+        cell.colSpan = 5;
+        cell.textContent = "No orders for your store yet.";
+        row.appendChild(cell);
+        recentOrdersBody.appendChild(row);
+        return;
+      }
+
+      recentItems.forEach(({ order, item }) => {
+        const row = document.createElement("tr");
+        const status = String(item.fulfillmentStatus || item.status || order.status || "Processing");
+        const displayedStatus = status === "Demo order" || status === "Order placed"
+          ? "Processing"
+          : status;
+        const statusClass = displayedStatus.toLowerCase().replace(/[^a-z]+/g, "-");
+        const dateValue = order.createdAt || order.date;
+        const parsedDate = dateValue ? new Date(dateValue) : null;
+        const displayedDate = parsedDate && !Number.isNaN(parsedDate.getTime())
+          ? parsedDate.toLocaleDateString("en-PK", { day: "numeric", month: "short" })
+          : "—";
+        const values = [
+          `#${order.id || "—"}`,
+          item.productName || "Product",
+          order.customer?.name || order.shippingAddress?.name || "Customer"
+        ];
+        values.forEach(value => {
+          const cell = document.createElement("td");
+          cell.textContent = String(value);
+          row.appendChild(cell);
+        });
+        const statusCell = document.createElement("td");
+        const badge = document.createElement("span");
+        badge.className = `badge ${statusClass}`;
+        badge.textContent = displayedStatus;
+        statusCell.appendChild(badge);
+        row.appendChild(statusCell);
+        const dateCell = document.createElement("td");
+        dateCell.textContent = displayedDate;
+        row.appendChild(dateCell);
+        recentOrdersBody.appendChild(row);
+      });
+    } catch (error) {
+      console.error("Unable to load recent seller orders:", error);
+      if (totalOrders) totalOrders.textContent = "—";
+      if (!recentOrdersBody) return;
+      const row = document.createElement("tr");
+      const cell = document.createElement("td");
+      cell.colSpan = 5;
+      cell.textContent = "Orders are unavailable. Please check saved order data.";
+      row.appendChild(cell);
+      recentOrdersBody.replaceChildren(row);
+    }
+  }
+  renderRecentOrders();
+  window.addEventListener("storage", event => {
+    if (!event.key || event.key === "noireCustomerOrders") renderRecentOrders();
+  });
+
   const productsKey = "noireSellerProducts_" + activeSeller.email.toLowerCase();
   // One-time compatibility: move old shared products to the first registered seller,
   // so a newly registered account never inherits another seller's products.

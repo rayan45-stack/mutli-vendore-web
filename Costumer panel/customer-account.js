@@ -448,6 +448,18 @@
     $('#addressPhone').value=state.profile.phone;
     $('#city').focus();
   }
+  window.addEventListener('hashchange',()=>{
+    const page=location.hash.slice(1).replace(/^page-/,'');
+    const valid=['overview','profile','addresses','orders','returns','reviews','wishlist','stores','messages','security'];
+    go(page==='addresses'?'profile':valid.includes(page)?page:'overview');
+    if(page==='addresses'){
+      $('#addressForm').classList.remove('hidden');
+      $('#addressLabel').value='Home';
+      $('#recipient').value=state.profile.name;
+      $('#addressPhone').value=state.profile.phone;
+      $('#city').focus();
+    }
+  });
   if(shoppingContinuation&&['cart','checkout'].includes(shoppingContinuation.destination)&&loggedInSeller&&String(shoppingContinuation.sellerEmail||'').trim().toLowerCase()===String(loggedInSeller.email||'').trim().toLowerCase()){
     go('profile');
     $('#addressForm').classList.remove('hidden');

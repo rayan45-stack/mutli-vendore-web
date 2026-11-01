@@ -21,6 +21,96 @@ document.addEventListener("DOMContentLoaded", () => {
   const unreadCount = document.getElementById("sellerMessageCount");
   let selectedCustomerId = "";
 
+  replyInput.addEventListener("keydown", event => {
+    if (event.key !== "Enter" || event.shiftKey || event.ctrlKey || event.metaKey ||
+      event.altKey || event.isComposing || event.keyCode === 229) return;
+    event.preventDefault();
+    if (!replyInput.disabled && selectedCustomerId) replyForm.requestSubmit();
+  });
+
+  const sellerStoreName = document.getElementById("sellerStoreName");
+  const sellerAvatar = document.getElementById("sellerAvatar");
+  const sellerNavLabel = document.querySelector("#sellerNavLink .seller-menu-label");
+  const sellerName = seller.storeName || "Seller Store";
+  if (sellerStoreName) sellerStoreName.textContent = sellerName;
+  if (sellerAvatar) sellerAvatar.textContent = sellerName.trim().charAt(0).toUpperCase() || "S";
+  if (sellerNavLabel) sellerNavLabel.textContent = sellerName;
+  const currentDate = document.getElementById("currentDate");
+  if (currentDate) {
+    currentDate.textContent = new Date().toLocaleDateString("en-PK", {
+      day: "numeric", month: "short", year: "numeric"
+    });
+  }
+
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("show");
+      hamburger.setAttribute("aria-expanded", String(open));
+      hamburger.innerHTML = open
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+  }
+  const searchToggle = document.getElementById("searchToggle");
+  const mobileSearchBox = document.getElementById("mobileSearchBox");
+  if (searchToggle && mobileSearchBox) {
+    searchToggle.addEventListener("click", () => {
+      const open = mobileSearchBox.classList.toggle("show-search");
+      searchToggle.setAttribute("aria-expanded", String(open));
+      if (open) mobileSearchBox.querySelector("input")?.focus();
+    });
+  }
+  const categoriesToggle = document.getElementById("categoriesToggle");
+  const categoriesDropdown = document.querySelector(".nav-dropdown");
+  if (categoriesToggle && categoriesDropdown) {
+    categoriesToggle.addEventListener("click", event => {
+      event.stopPropagation();
+      const open = categoriesDropdown.classList.toggle("open");
+      categoriesToggle.setAttribute("aria-expanded", String(open));
+    });
+    document.addEventListener("click", event => {
+      if (!categoriesDropdown.contains(event.target)) {
+        categoriesDropdown.classList.remove("open");
+        categoriesToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+  document.querySelectorAll("#searchForm, #mobileSearchBox").forEach(form => {
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      const query = form.querySelector("input")?.value.trim();
+      if (query) window.location.href = `../../Shoppage/shop.html?search=${encodeURIComponent(query)}`;
+    });
+  });
+  const sellerMenu = document.getElementById("sellerAccountMenu");
+  const sellerMenuButton = document.getElementById("sellerNavLink");
+  const sellerDropdown = document.getElementById("sellerDropdown");
+  if (sellerMenu && sellerMenuButton && sellerDropdown) {
+    sellerMenuButton.addEventListener("click", () => {
+      const open = sellerDropdown.hidden;
+      sellerDropdown.hidden = !open;
+      sellerMenu.classList.toggle("open", open);
+      sellerMenuButton.setAttribute("aria-expanded", String(open));
+    });
+    document.addEventListener("click", event => {
+      if (!sellerMenu.contains(event.target)) {
+        sellerDropdown.hidden = true;
+        sellerMenu.classList.remove("open");
+        sellerMenuButton.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+  const sellerLogout = document.getElementById("sellerLogoutButton");
+  if (sellerLogout) {
+    sellerLogout.addEventListener("click", () => {
+      localStorage.removeItem("noireLoggedInSeller");
+      localStorage.setItem("noireSellerLoggedOut", "true");
+      window.location.href = "../../Homepage/index.html";
+    });
+  }
+
   function readJson(key, fallback) {
     const value = localStorage.getItem(key);
     return value === null ? fallback : JSON.parse(value);
@@ -82,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     receipts[thread.customerId] = Date.now();
     localStorage.setItem(readKey, JSON.stringify(receipts));
     thread.unreadCount = 0;
+    window.dispatchEvent(new Event("noireSellerMessagesUpdated"));
   }
 
   function renderMessages(thread) {

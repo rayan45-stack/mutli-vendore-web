@@ -6,6 +6,7 @@
     <title>NOIRE</title>
     <link rel="stylesheet" href="../Seller panel/seller-dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../site-motion.css">
 </head>
 <body>
     <nav class="navbar">
@@ -131,7 +132,7 @@
         <a href="../Seller panel/Orders/orders.html" class="side-link">
           <i class="fa-regular fa-clipboard"></i><span>Orders</span>
         </a>
-        <a href="#messages" class="side-link">
+        <a href="Messages/messages.html" class="side-link">
           <i class="fa-regular fa-comments"></i><span>Messages</span>
           <span class="message-count" id="sellerMessageCount" hidden></span>
         </a>
@@ -180,8 +181,8 @@
         <article class="stat-card">
           <div class="stat-icon"><i class="fa-solid fa-cart-shopping"></i></div>
           <p>Total Orders</p>
-          <h2 id="totalOrders">8</h2>
-          <span class="positive">Demo order data</span>
+          <h2 id="totalOrders">0</h2>
+          <a class="positive" href="../Seller panel/Orders/orders.html">View orders</a>
         </article>
 
         <article class="stat-card" id="earnings">
@@ -197,26 +198,6 @@
           <h2 id="pendingProducts">1</h2>
           <span class="attention"><i class="fa-regular fa-clock"></i> Needs attention</span>
         </article>
-      </section>
-
-      <section class="panel seller-inbox" id="messages">
-        <div class="section-title">
-          <h2>Customer Messages</h2>
-          <p>Reply to customers who contacted your store from this browser.</p>
-        </div>
-        <p class="inbox-notice" id="sellerInboxNotice" role="status" aria-live="polite"></p>
-        <div class="seller-inbox-layout">
-          <div class="inbox-conversations" id="sellerConversations" aria-label="Customer conversations"></div>
-          <section class="inbox-thread" aria-label="Selected conversation">
-            <h3 id="sellerConversationTitle">Select a conversation</h3>
-            <div class="inbox-messages" id="sellerConversationMessages" role="log" aria-live="polite"></div>
-            <form class="inbox-reply-form" id="sellerReplyForm">
-              <label class="visually-hidden" for="sellerReplyInput">Write a reply</label>
-              <textarea id="sellerReplyInput" rows="2" maxlength="1000" placeholder="Write a reply..." required disabled></textarea>
-              <button type="submit" id="sellerReplyButton" disabled><i class="fa-solid fa-paper-plane"></i> Reply</button>
-            </form>
-          </section>
-        </div>
       </section>
 
       <!-- FORM AND RIGHT COLUMN -->
@@ -332,33 +313,7 @@
                     <th>Date</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>#NO1024</td><td>Wireless Headphones</td>
-                    <td>Ali Raza</td><td><span class="badge pending">Pending</span></td>
-                    <td>Oct 13</td>
-                  </tr>
-                  <tr>
-                    <td>#NO1023</td><td>Leather Handbag</td>
-                    <td>Ayesha Khan</td><td><span class="badge shipped">Shipped</span></td>
-                    <td>Oct 12</td>
-                  </tr>
-                  <tr>
-                    <td>#NO1022</td><td>Smart Watch</td>
-                    <td>Hassan Ali</td><td><span class="badge delivered">Delivered</span></td>
-                    <td>Oct 11</td>
-                  </tr>
-                  <tr>
-                    <td>#NO1021</td><td>Scented Candle</td>
-                    <td>Sara Malik</td><td><span class="badge pending">Pending</span></td>
-                    <td>Oct 10</td>
-                  </tr>
-                  <tr>
-                    <td>#NO1020</td><td>Running Shoes</td>
-                    <td>Usman Tariq</td><td><span class="badge processing">Processing</span></td>
-                    <td>Oct 9</td>
-                  </tr>
-                </tbody>
+                <tbody id="recentOrdersBody"></tbody>
               </table>
             </div>
           </section>
@@ -417,7 +372,8 @@
   </div>
 
     <script src="../Seller panel/seller.js"></script>
-    <script src="../Seller panel/seller-chat.js"></script>
+    <script src="../Seller panel/seller-message-count.js" defer></script>
     <script src="../account-nav.js" defer></script>
+    <script src="../site-motion.js" defer></script>
 </body>
 </html>

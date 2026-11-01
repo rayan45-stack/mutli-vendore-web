@@ -662,6 +662,12 @@
   chatDialog.addEventListener("click", event => {
     if (event.target === chatDialog) chatDialog.close();
   });
+  chatInput.addEventListener("keydown", event => {
+    if (event.key !== "Enter" || event.shiftKey || event.ctrlKey || event.metaKey ||
+      event.altKey || event.isComposing || event.keyCode === 229) return;
+    event.preventDefault();
+    chatForm.requestSubmit();
+  });
   chatForm.addEventListener("submit", event => {
     event.preventDefault();
     const text = chatInput.value.trim();

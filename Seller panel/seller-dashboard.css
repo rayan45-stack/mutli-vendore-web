@@ -478,11 +478,21 @@ body {
   overflow-wrap: anywhere;
 }
 
-.stat-card > span {
+.stat-card > span,
+.stat-card > a {
   display: block;
   font-size: 10px;
   margin-top: 6px;
   color: #86b58f;
+}
+
+.stat-card > a {
+  text-decoration: none;
+}
+
+.stat-card > a:hover,
+.stat-card > a:focus-visible {
+  text-decoration: underline;
 }
 
 .stat-card .attention {
@@ -1671,7 +1681,8 @@ body {
     overflow-wrap: anywhere;
   }
 
-  .stat-card > span {
+  .stat-card > span,
+  .stat-card > a {
     font-size: 8px;
     overflow-wrap: anywhere;
   }
