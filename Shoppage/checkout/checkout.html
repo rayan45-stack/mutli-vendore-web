@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,15 +10,18 @@
   <link rel="stylesheet" href="checkout.css">
   <link rel="stylesheet" href="../../site-motion.css">
 </head>
+
 <body>
   <nav class="navbar" aria-label="Main navigation">
-    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><i class="fa-solid fa-bars"></i></button>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
+      aria-controls="navLinks"><i class="fa-solid fa-bars"></i></button>
     <a href="../../Homepage/index.html" class="logo">NOIRÉ</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="../../Homepage/index.html">Home</a></li>
       <li><a href="../shop.html">Shop</a></li>
       <li class="nav-dropdown">
-        <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">Categories <i class="fa-solid fa-chevron-down small-icon"></i></button>
+        <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false"
+          aria-controls="categoriesMenu">Categories <i class="fa-solid fa-chevron-down small-icon"></i></button>
         <div class="categories-menu" id="categoriesMenu">
           <p class="categories-menu-title">EXPLORE CATEGORIES</p>
           <a href="../shop.html?category=electronics">Electronics</a>
@@ -28,11 +32,18 @@
           <a href="../shop.html?category=books">Books &amp; Toys</a>
         </div>
       </li>
-      <li class="seller-account" id="sellerAccountMenu" data-home-url="../../Homepage/index.html" data-register-url="../Seller registration/seller-register.html" data-login-url="../Login page/login.html" data-dashboard-url="../../Seller panel/seller-dashboard.html" data-settings-url="../../Seller panel/settings/seller-settings.html">
-        <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false" aria-controls="sellerDropdown"><span class="seller-menu-label">Become a seller</span><i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i></button>
+      <li class="seller-account" id="sellerAccountMenu" data-home-url="../../Homepage/index.html"
+        data-register-url="../Seller registration/seller-register.html" data-login-url="../Login page/login.html"
+        data-dashboard-url="../../Seller panel/seller-dashboard.html"
+        data-settings-url="../../Seller panel/settings/seller-settings.html">
+        <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false"
+          aria-controls="sellerDropdown"><span class="seller-menu-label">Become a seller</span><i
+            class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i></button>
         <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
-          <a href="../../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
-          <a href="../../Seller panel/settings/seller-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a>
+          <a href="../../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i
+              class="fa-solid fa-house"></i>Dashboard</a>
+          <a href="../../Seller panel/settings/seller-settings.html" data-seller-destination="settings"><i
+              class="fa-solid fa-gear"></i>Settings</a>
           <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
         </div>
       </li>
@@ -43,10 +54,13 @@
       <input type="search" placeholder="Search for products..." aria-label="Search for products">
     </form>
     <div class="nav-icons">
-      <button class="mobile-search" id="searchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="mobileSearchBox"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="mobile-search" id="searchToggle" type="button" aria-label="Open search" aria-expanded="false"
+        aria-controls="mobileSearchBox"><i class="fa-solid fa-magnifying-glass"></i></button>
       <a href="../../Costumer panel/customer-account.html" aria-label="Profile"><i class="fa-regular fa-user"></i></a>
-      <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
-      <a href="../cart/cart.html" class="bag" aria-label="Shopping bag, view cart"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span></a>
+      <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i
+          class="fa-regular fa-heart"></i></a>
+      <a href="../cart/cart.html" class="bag" aria-label="Shopping bag, view cart"><i
+          class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span></a>
     </div>
     <form class="mobile-search-box" id="mobileSearchBox" role="search">
       <input type="search" placeholder="Search for products..." aria-label="Search for products">
@@ -61,7 +75,11 @@
       <span class="step"><i class="fa-regular fa-credit-card"></i> Payment</span>
     </nav>
     <header class="checkout-title">
-      <div><p class="eyebrow">ALMOST YOURS</p><h1>Shipping &amp; Billing</h1><p>Confirm your delivery details and review your NOIRÉ order.</p></div>
+      <div>
+        <p class="eyebrow">ALMOST YOURS</p>
+        <h1>Shipping &amp; Billing</h1>
+        <p>Confirm your delivery details and review your NOIRÉ order.</p>
+      </div>
       <a href="../cart/cart.html" class="back-to-cart"><i class="fa-solid fa-arrow-left"></i> Back to cart</a>
     </header>
     <div id="checkoutNotice" class="checkout-notice" role="status" hidden></div>
@@ -70,34 +88,47 @@
       <div class="checkout-main">
         <section class="checkout-card address-card" aria-labelledby="addressHeading">
           <div class="card-heading">
-            <div><p class="eyebrow">SHIPPING DETAILS</p><h2 id="addressHeading">Shipping &amp; Billing</h2></div>
+            <div>
+              <p class="eyebrow">SHIPPING DETAILS</p>
+              <h2 id="addressHeading">Shipping &amp; Billing</h2>
+            </div>
             <button type="button" class="text-button" id="editAddressButton" hidden>Edit</button>
           </div>
           <div id="savedAddress" class="saved-address" hidden>
-            <div class="address-contact"><strong id="savedCustomerName"></strong><span id="savedCustomerPhone"></span></div>
-            <div class="address-label"><span>HOME</span><p id="savedCustomerAddress"></p></div>
+            <div class="address-contact"><strong id="savedCustomerName"></strong><span id="savedCustomerPhone"></span>
+            </div>
+            <div class="address-label"><span>HOME</span>
+              <p id="savedCustomerAddress"></p>
+            </div>
           </div>
           <form id="addressForm" class="address-form">
             <div class="form-grid">
               <label>Full name<input name="name" type="text" autocomplete="name" maxlength="100" required></label>
               <label>Phone number<input name="phone" type="tel" autocomplete="tel" maxlength="30" required></label>
-              <label class="full-field">Delivery address<textarea name="address" rows="3" autocomplete="street-address" maxlength="300" required></textarea></label>
+              <label class="full-field">Delivery address<textarea name="address" rows="3" autocomplete="street-address"
+                  maxlength="300" required></textarea></label>
             </div>
             <button type="submit" class="save-address-button">Save delivery details</button>
             <p id="addressMessage" class="form-message" role="status"></p>
           </form>
-          <div class="collection-note"><i class="fa-solid fa-location-dot"></i><div><strong>Collection point</strong><span>Pickup locations are not configured in this demo.</span></div></div>
+          <div class="collection-note"><i class="fa-solid fa-location-dot"></i>
+            <div><strong>Collection point</strong><span>Pickup locations are not configured in this demo.</span></div>
+          </div>
         </section>
 
         <section class="checkout-card package-card" aria-labelledby="packageHeading">
-          <div class="package-heading"><h2 id="packageHeading">Package <span id="packageCount">1</span></h2><p>Shipped by <strong id="packageSeller">NOIRÉ sellers</strong></p></div>
+          <div class="package-heading">
+            <h2 id="packageHeading">Package <span id="packageCount">1</span></h2>
+            <p>Shipped by <strong id="packageSeller">NOIRÉ sellers</strong></p>
+          </div>
           <div class="delivery-choice">
             <p class="choice-label">Delivery option</p>
             <label class="delivery-option selected">
               <input type="radio" name="deliveryOption" value="standard" checked>
               <span class="radio-mark"></span>
               <i class="fa-solid fa-truck-fast"></i>
-              <span class="delivery-copy"><strong>Standard delivery</strong><small>Delivery fee and estimate confirmed by seller</small></span>
+              <span class="delivery-copy"><strong>Standard delivery</strong><small>Delivery fee and estimate confirmed
+                  by seller</small></span>
               <span class="delivery-price">To be confirmed</span>
             </label>
           </div>
@@ -105,30 +136,45 @@
         </section>
 
         <section class="checkout-card invoice-card" aria-labelledby="invoiceHeading">
-          <div class="card-heading"><div><p class="eyebrow">BILLING</p><h2 id="invoiceHeading">Invoice &amp; Contact Info</h2></div></div>
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">BILLING</p>
+              <h2 id="invoiceHeading">Invoice &amp; Contact Info</h2>
+            </div>
+          </div>
           <p>Your invoice and order updates will use the contact information above.</p>
-          <div class="invoice-contact"><i class="fa-regular fa-envelope"></i><span id="checkoutCustomerEmail">Email is not required for this demo checkout.</span></div>
+          <div class="invoice-contact"><i class="fa-regular fa-envelope"></i><span id="checkoutCustomerEmail">Email is
+              not required for this demo checkout.</span></div>
         </section>
       </div>
 
       <aside class="order-summary" aria-labelledby="summaryHeading">
         <section class="summary-card">
-          <div class="card-heading"><h2>Promotion</h2></div>
+          <div class="card-heading">
+            <h2>Promotion</h2>
+          </div>
           <form id="promotionForm" class="promotion-form">
             <input name="code" type="text" maxlength="40" placeholder="Enter voucher code" aria-label="Voucher code">
             <button type="submit">Apply</button>
           </form>
           <p id="promotionMessage" class="promotion-message" role="status"></p>
-          <div class="summary-subheading"><h2 id="summaryHeading">Order Summary</h2><span id="summaryItemCount">0 items</span></div>
+          <div class="summary-subheading">
+            <h2 id="summaryHeading">Order Summary</h2><span id="summaryItemCount">0 items</span>
+          </div>
           <div id="summaryProducts" class="summary-products"></div>
           <div class="summary-line"><span>Items total</span><strong id="itemsTotal">Rs. 0</strong></div>
           <div class="summary-line"><span>Delivery fee</span><strong>Confirmed by seller</strong></div>
           <div class="summary-line"><span>Platform fee</span><strong>Not configured</strong></div>
           <div class="summary-total"><span>Total</span><strong id="orderTotal">Rs. 0</strong></div>
           <p class="tax-note">Delivery/platform charges are not configured in this preview.</p>
-          <label class="payment-method"><span>Payment method</span><select id="paymentMethod" aria-label="Payment method"><option value="Cash on delivery">Cash on delivery (demo)</option></select></label>
-          <button type="button" class="place-order-button" id="placeOrderButton"><i class="fa-solid fa-lock"></i> Place demo order</button>
-          <p class="payment-disclaimer">No real payment is processed. This button records a demo order in this browser.</p>
+          <label class="payment-method"><span>Payment method</span><select id="paymentMethod"
+              aria-label="Payment method">
+              <option value="Cash on delivery">Cash on delivery (demo)</option>
+            </select></label>
+          <button type="button" class="place-order-button" id="placeOrderButton"><i class="fa-solid fa-lock"></i> Place
+            demo order</button>
+          <p class="payment-disclaimer">No real payment is processed. This button records a demo order in this browser.
+          </p>
         </section>
       </aside>
     </div>
@@ -138,4 +184,5 @@
   <script src="../../account-nav.js" defer></script>
   <script src="../../site-motion.js" defer></script>
 </body>
+
 </html>

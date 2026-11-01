@@ -81,7 +81,7 @@
 
 .profile-fields .form-group label,
 .shipping-fields .form-group label,
-.logo-field > label,
+.logo-field>label,
 .password-dialog label {
   margin-bottom: 5px;
   color: #302319;
@@ -163,8 +163,8 @@
   letter-spacing: 2px;
 }
 
-.logo-preview.has-logo > span,
-.logo-preview.has-logo > small {
+.logo-preview.has-logo>span,
+.logo-preview.has-logo>small {
   display: none;
 }
 
@@ -262,7 +262,7 @@
   position: relative;
 }
 
-.input-with-icon > i {
+.input-with-icon>i {
   position: absolute;
   top: 50%;
   left: 10px;
@@ -352,7 +352,7 @@
   font-size: 10px;
 }
 
-.address-details > strong {
+.address-details>strong {
   font-size: 11px;
 }
 
@@ -463,15 +463,15 @@
   transition: transform 0.2s ease;
 }
 
-.switch input:checked + span {
+.switch input:checked+span {
   background: var(--gold);
 }
 
-.switch input:checked + span::before {
+.switch input:checked+span::before {
   transform: translateX(18px);
 }
 
-.switch input:focus-visible + span {
+.switch input:focus-visible+span {
   outline: 2px solid #493523;
   outline-offset: 2px;
 }
@@ -569,8 +569,8 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .settings-side-column > .settings-card:first-child,
-  .settings-side-column > .payment-card {
+  .settings-side-column>.settings-card:first-child,
+  .settings-side-column>.payment-card {
     grid-column: 1 / -1;
   }
 }
@@ -580,8 +580,8 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .settings-side-column > .settings-card:first-child,
-  .settings-side-column > .payment-card {
+  .settings-side-column>.settings-card:first-child,
+  .settings-side-column>.payment-card {
     grid-column: auto;
   }
 

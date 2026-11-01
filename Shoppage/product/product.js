@@ -60,7 +60,7 @@
       if (!Array.isArray(accounts)) return session;
       return accounts.find(account =>
         account && String(account.email || "").trim().toLowerCase() ===
-          String(session.email).trim().toLowerCase()
+        String(session.email).trim().toLowerCase()
       ) || session;
     } catch (error) {
       return null;

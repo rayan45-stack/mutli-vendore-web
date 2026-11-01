@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,15 +10,18 @@
   <link rel="stylesheet" href="store.css">
   <link rel="stylesheet" href="../../site-motion.css">
 </head>
+
 <body>
   <nav class="navbar" aria-label="Main navigation">
-    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><i class="fa-solid fa-bars"></i></button>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
+      aria-controls="navLinks"><i class="fa-solid fa-bars"></i></button>
     <a href="../../Homepage/index.html" class="logo">NOIRÉ</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="../../Homepage/index.html">Home</a></li>
       <li><a href="../shop.html">Shop</a></li>
       <li class="nav-dropdown">
-        <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">Categories <i class="fa-solid fa-chevron-down small-icon"></i></button>
+        <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false"
+          aria-controls="categoriesMenu">Categories <i class="fa-solid fa-chevron-down small-icon"></i></button>
         <div class="categories-menu" id="categoriesMenu">
           <p class="categories-menu-title">EXPLORE CATEGORIES</p>
           <a href="../shop.html?category=electronics">Electronics</a>
@@ -28,11 +32,18 @@
           <a href="../shop.html?category=books">Books &amp; Toys</a>
         </div>
       </li>
-      <li class="seller-account" id="sellerAccountMenu" data-home-url="../../Homepage/index.html" data-register-url="../../Seller registration/seller-register.html" data-login-url="../../Login page/login.html" data-dashboard-url="../../Seller panel/seller-dashboard.html" data-settings-url="../../Seller panel/settings/seller-settings.html">
-        <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false" aria-controls="sellerDropdown"><span class="seller-menu-label">Become a seller</span><i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i></button>
+      <li class="seller-account" id="sellerAccountMenu" data-home-url="../../Homepage/index.html"
+        data-register-url="../../Seller registration/seller-register.html" data-login-url="../../Login page/login.html"
+        data-dashboard-url="../../Seller panel/seller-dashboard.html"
+        data-settings-url="../../Seller panel/settings/seller-settings.html">
+        <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false"
+          aria-controls="sellerDropdown"><span class="seller-menu-label">Become a seller</span><i
+            class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i></button>
         <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
-          <a href="../../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
-          <a href="../../Seller panel/settings/seller-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a>
+          <a href="../../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i
+              class="fa-solid fa-house"></i>Dashboard</a>
+          <a href="../../Seller panel/settings/seller-settings.html" data-seller-destination="settings"><i
+              class="fa-solid fa-gear"></i>Settings</a>
           <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
         </div>
       </li>
@@ -43,10 +54,13 @@
       <input type="search" placeholder="Search for products..." aria-label="Search for products">
     </form>
     <div class="nav-icons">
-      <button class="mobile-search" id="searchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="mobileSearchBox"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="mobile-search" id="searchToggle" type="button" aria-label="Open search" aria-expanded="false"
+        aria-controls="mobileSearchBox"><i class="fa-solid fa-magnifying-glass"></i></button>
       <a href="../../Costumer panel/customer-account.html" aria-label="Profile"><i class="fa-regular fa-user"></i></a>
-      <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
-      <a href="../cart/cart.html" class="bag" aria-label="Shopping bag, view cart"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span></a>
+      <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i
+          class="fa-regular fa-heart"></i></a>
+      <a href="../cart/cart.html" class="bag" aria-label="Shopping bag, view cart"><i
+          class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span></a>
     </div>
     <form class="mobile-search-box" id="mobileSearchBox" role="search">
       <input type="search" placeholder="Search for products..." aria-label="Search for products">
@@ -67,40 +81,72 @@
           <div id="storeMeta" class="store-meta"></div>
         </div>
         <div class="store-actions">
-          <button type="button" id="followStoreButton" class="store-follow-button"><i class="fa-regular fa-heart"></i> <span>Follow</span></button>
-          <button type="button" id="chatSellerButton" class="store-chat-button"><i class="fa-regular fa-comments"></i> Chat with seller<span id="chatSellerUnread" class="store-chat-unread" hidden></span></button>
+          <button type="button" id="followStoreButton" class="store-follow-button"><i class="fa-regular fa-heart"></i>
+            <span>Follow</span></button>
+          <button type="button" id="chatSellerButton" class="store-chat-button"><i class="fa-regular fa-comments"></i>
+            Chat with seller<span id="chatSellerUnread" class="store-chat-unread" hidden></span></button>
         </div>
       </div>
       <p id="storeDescription" class="store-description"></p>
       <div id="storeNotice" class="store-notice" role="status" aria-live="polite"></div>
       <div class="store-tabs" role="tablist" aria-label="Seller store sections">
-        <button type="button" id="storeTab" class="store-tab active" role="tab" aria-selected="true" aria-controls="storePanel">Store</button>
-        <button type="button" id="productsTab" class="store-tab" role="tab" aria-selected="false" aria-controls="storePanel" tabindex="-1">Products <span id="storeProductCount">0</span></button>
-        <button type="button" id="profileTab" class="store-tab" role="tab" aria-selected="false" aria-controls="profilePanel" tabindex="-1">Profile</button>
+        <button type="button" id="storeTab" class="store-tab active" role="tab" aria-selected="true"
+          aria-controls="storePanel">Store</button>
+        <button type="button" id="productsTab" class="store-tab" role="tab" aria-selected="false"
+          aria-controls="storePanel" tabindex="-1">Products <span id="storeProductCount">0</span></button>
+        <button type="button" id="profileTab" class="store-tab" role="tab" aria-selected="false"
+          aria-controls="profilePanel" tabindex="-1">Profile</button>
       </div>
       <section id="storePanel" class="store-tab-panel" role="tabpanel" aria-labelledby="storeTab">
         <div id="storeOverview" class="store-overview-content">
           <div class="store-overview-grid">
-            <article class="store-overview-card"><i class="fa-solid fa-users" aria-hidden="true"></i><div><strong id="storeFollowerCount">—</strong><span>Followers</span></div></article>
-            <article class="store-overview-card"><i class="fa-solid fa-star" aria-hidden="true"></i><div><strong id="storeAverageRating">—</strong><span id="storeReviewCount">Seller rating</span></div></article>
-            <article class="store-overview-card"><i class="fa-solid fa-box-open" aria-hidden="true"></i><div><strong id="storeOverviewProductCount">0</strong><span>Products</span></div></article>
+            <article class="store-overview-card"><i class="fa-solid fa-users" aria-hidden="true"></i>
+              <div><strong id="storeFollowerCount">—</strong><span>Followers</span></div>
+            </article>
+            <article class="store-overview-card"><i class="fa-solid fa-star" aria-hidden="true"></i>
+              <div><strong id="storeAverageRating">—</strong><span id="storeReviewCount">Seller rating</span></div>
+            </article>
+            <article class="store-overview-card"><i class="fa-solid fa-box-open" aria-hidden="true"></i>
+              <div><strong id="storeOverviewProductCount">0</strong><span>Products</span></div>
+            </article>
           </div>
           <p id="storeFollowerNote" class="store-follower-note"></p>
         </div>
         <section id="storeProductsSection" class="store-products-section">
           <div class="store-products-heading">
-            <div><p class="store-eyebrow">CURATED BY THIS SELLER</p><h2>Store products</h2></div>
+            <div>
+              <p class="store-eyebrow">CURATED BY THIS SELLER</p>
+              <h2>Store products</h2>
+            </div>
             <span id="storeProductsCount"></span>
           </div>
           <div id="storeProducts" class="store-products-grid"></div>
         </section>
       </section>
-      <section id="profilePanel" class="store-tab-panel store-profile-section" role="tabpanel" aria-labelledby="profileTab" hidden>
-        <div class="store-profile-heading"><p class="store-eyebrow">SELLER DETAILS</p><h2>Store profile</h2><p>Shipping and chat performance is calculated from saved orders and chat history. Missing history is not estimated.</p></div>
+      <section id="profilePanel" class="store-tab-panel store-profile-section" role="tabpanel"
+        aria-labelledby="profileTab" hidden>
+        <div class="store-profile-heading">
+          <p class="store-eyebrow">SELLER DETAILS</p>
+          <h2>Store profile</h2>
+          <p>Shipping and chat performance is calculated from saved orders and chat history. Missing history is not
+            estimated.</p>
+        </div>
         <div class="store-profile-metrics">
-          <article class="store-profile-metric"><span class="store-profile-icon"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></span><div><span class="metric-label">Joined</span><strong id="sellerJoinedDate">—</strong></div></article>
-          <article class="store-profile-metric"><span class="store-profile-icon"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i></span><div><span class="metric-label">Shipped on time</span><strong id="sellerOnTimeRate">No shipment data</strong></div></article>
-          <article class="store-profile-metric"><span class="store-profile-icon"><i class="fa-regular fa-comments" aria-hidden="true"></i></span><div><span class="metric-label">Chat response</span><strong id="sellerChatResponseTime">No replies yet</strong><span id="sellerChatResponseRate" class="metric-detail">Response rate unavailable</span></div></article>
+          <article class="store-profile-metric"><span class="store-profile-icon"><i class="fa-regular fa-calendar-check"
+                aria-hidden="true"></i></span>
+            <div><span class="metric-label">Joined</span><strong id="sellerJoinedDate">—</strong></div>
+          </article>
+          <article class="store-profile-metric"><span class="store-profile-icon"><i class="fa-solid fa-truck-fast"
+                aria-hidden="true"></i></span>
+            <div><span class="metric-label">Shipped on time</span><strong id="sellerOnTimeRate">No shipment
+                data</strong></div>
+          </article>
+          <article class="store-profile-metric"><span class="store-profile-icon"><i class="fa-regular fa-comments"
+                aria-hidden="true"></i></span>
+            <div><span class="metric-label">Chat response</span><strong id="sellerChatResponseTime">No replies
+                yet</strong><span id="sellerChatResponseRate" class="metric-detail">Response rate unavailable</span>
+            </div>
+          </article>
         </div>
       </section>
     </section>
@@ -109,15 +155,23 @@
     <section class="store-chat-panel">
       <header class="store-chat-header">
         <div class="store-chat-avatar" id="chatStoreAvatar" aria-hidden="true"></div>
-        <div><p class="store-eyebrow">NOIRÉ STORE CHAT</p><h2 id="storeChatTitle">Chat with seller</h2></div>
-        <button type="button" id="closeChatButton" class="store-chat-close" aria-label="Close chat"><i class="fa-solid fa-xmark"></i></button>
+        <div>
+          <p class="store-eyebrow">NOIRÉ STORE CHAT</p>
+          <h2 id="storeChatTitle">Chat with seller</h2>
+        </div>
+        <button type="button" id="closeChatButton" class="store-chat-close" aria-label="Close chat"><i
+            class="fa-solid fa-xmark"></i></button>
       </header>
-      <div id="storeChatMessages" class="store-chat-messages" role="log" aria-live="polite" aria-relevant="additions text"></div>
-      <p class="store-chat-disclaimer">Messages are saved in this browser only and can be viewed and answered from the seller dashboard on this browser.</p>
+      <div id="storeChatMessages" class="store-chat-messages" role="log" aria-live="polite"
+        aria-relevant="additions text"></div>
+      <p class="store-chat-disclaimer">Messages are saved in this browser only and can be viewed and answered from the
+        seller dashboard on this browser.</p>
       <form id="storeChatForm" class="store-chat-form">
         <label class="visually-hidden" for="storeChatInput">Write a message to the seller</label>
-        <textarea id="storeChatInput" name="message" rows="2" maxlength="1000" placeholder="Write your message..." required></textarea>
-        <button type="submit" aria-label="Send message"><i class="fa-solid fa-paper-plane"></i><span>Send</span></button>
+        <textarea id="storeChatInput" name="message" rows="2" maxlength="1000" placeholder="Write your message..."
+          required></textarea>
+        <button type="submit" aria-label="Send message"><i
+            class="fa-solid fa-paper-plane"></i><span>Send</span></button>
       </form>
     </section>
   </dialog>
@@ -126,4 +180,5 @@
   <script src="../../account-nav.js" defer></script>
   <script src="../../site-motion.js" defer></script>
 </body>
+
 </html>

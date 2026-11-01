@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,15 +10,18 @@
   <link rel="stylesheet" href="cart.css">
   <link rel="stylesheet" href="../../site-motion.css">
 </head>
+
 <body>
   <nav class="navbar" aria-label="Main navigation">
-    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><i class="fa-solid fa-bars"></i></button>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
+      aria-controls="navLinks"><i class="fa-solid fa-bars"></i></button>
     <a href="../../Homepage/index.html" class="logo">NOIRÉ</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="../../Homepage/index.html">Home</a></li>
       <li><a href="../shop.html">Shop</a></li>
       <li class="nav-dropdown">
-        <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">Categories <i class="fa-solid fa-chevron-down small-icon"></i></button>
+        <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false"
+          aria-controls="categoriesMenu">Categories <i class="fa-solid fa-chevron-down small-icon"></i></button>
         <div class="categories-menu" id="categoriesMenu">
           <p class="categories-menu-title">EXPLORE CATEGORIES</p>
           <a href="../shop.html?category=electronics">Electronics</a>
@@ -28,11 +32,18 @@
           <a href="../shop.html?category=books">Books &amp; Toys</a>
         </div>
       </li>
-      <li class="seller-account" id="sellerAccountMenu" data-home-url="../../Homepage/index.html" data-register-url="../Seller registration/seller-register.html" data-login-url="../Login page/login.html" data-dashboard-url="../../Seller panel/seller-dashboard.html" data-settings-url="../../Seller panel/settings/seller-settings.html">
-        <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false" aria-controls="sellerDropdown"><span class="seller-menu-label">Become a seller</span><i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i></button>
+      <li class="seller-account" id="sellerAccountMenu" data-home-url="../../Homepage/index.html"
+        data-register-url="../Seller registration/seller-register.html" data-login-url="../Login page/login.html"
+        data-dashboard-url="../../Seller panel/seller-dashboard.html"
+        data-settings-url="../../Seller panel/settings/seller-settings.html">
+        <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false"
+          aria-controls="sellerDropdown"><span class="seller-menu-label">Become a seller</span><i
+            class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i></button>
         <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
-          <a href="../../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
-          <a href="../../Seller panel/settings/seller-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a>
+          <a href="../../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i
+              class="fa-solid fa-house"></i>Dashboard</a>
+          <a href="../../Seller panel/settings/seller-settings.html" data-seller-destination="settings"><i
+              class="fa-solid fa-gear"></i>Settings</a>
           <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
         </div>
       </li>
@@ -43,10 +54,13 @@
       <input type="search" placeholder="Search for products..." aria-label="Search for products">
     </form>
     <div class="nav-icons">
-      <button class="mobile-search" id="searchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="mobileSearchBox"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="mobile-search" id="searchToggle" type="button" aria-label="Open search" aria-expanded="false"
+        aria-controls="mobileSearchBox"><i class="fa-solid fa-magnifying-glass"></i></button>
       <a href="../../Costumer panel/customer-account.html" aria-label="Profile"><i class="fa-regular fa-user"></i></a>
-      <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
-      <a href="../cart/cart.html" class="bag" aria-label="Shopping bag, view cart"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span></a>
+      <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i
+          class="fa-regular fa-heart"></i></a>
+      <a href="../cart/cart.html" class="bag" aria-label="Shopping bag, view cart"><i
+          class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span></a>
     </div>
     <form class="mobile-search-box" id="mobileSearchBox" role="search">
       <input type="search" placeholder="Search for products..." aria-label="Search for products">
@@ -65,16 +79,20 @@
     <div class="cart-layout">
       <section class="cart-list-column" aria-label="Cart products">
         <div class="cart-list-toolbar">
-          <label class="select-all-label"><input type="checkbox" id="selectAllItems"><span>Select all (<span id="selectableItemCount">0</span> items)</span></label>
-          <button type="button" class="toolbar-action" id="deleteSelectedButton" disabled><i class="fa-regular fa-trash-can"></i> Delete selected</button>
+          <label class="select-all-label"><input type="checkbox" id="selectAllItems"><span>Select all (<span
+                id="selectableItemCount">0</span> items)</span></label>
+          <button type="button" class="toolbar-action" id="deleteSelectedButton" disabled><i
+              class="fa-regular fa-trash-can"></i> Delete selected</button>
         </div>
         <section id="cartItems" class="cart-items" aria-live="polite"></section>
         <section id="unavailableSection" class="unavailable-section" hidden>
           <div class="unavailable-toolbar">
             <strong>Unavailable items (<span id="unavailableItemCount">0</span>)</strong>
             <div>
-              <button type="button" class="toolbar-action" id="deleteUnavailableButton"><i class="fa-regular fa-trash-can"></i> Delete all</button>
-              <button type="button" class="toolbar-action" id="moveUnavailableButton"><i class="fa-regular fa-heart"></i> Move all to wishlist</button>
+              <button type="button" class="toolbar-action" id="deleteUnavailableButton"><i
+                  class="fa-regular fa-trash-can"></i> Delete all</button>
+              <button type="button" class="toolbar-action" id="moveUnavailableButton"><i
+                  class="fa-regular fa-heart"></i> Move all to wishlist</button>
             </div>
           </div>
           <div id="unavailableItems" class="unavailable-items"></div>
@@ -82,7 +100,8 @@
       </section>
       <aside class="cart-summary">
         <h2>Order Summary</h2>
-        <p><span>Subtotal (<span id="selectedQuantityCount">0</span> items)</span><strong id="cartSubtotal">Rs. 0</strong></p>
+        <p><span>Subtotal (<span id="selectedQuantityCount">0</span> items)</span><strong id="cartSubtotal">Rs.
+            0</strong></p>
         <p><span>Delivery fee</span><strong id="deliveryFeeLabel">Confirmed at checkout</strong></p>
         <form class="voucher-form" id="voucherForm">
           <input type="text" id="voucherCode" placeholder="Enter voucher code" aria-label="Voucher code" maxlength="40">
@@ -90,7 +109,8 @@
         </form>
         <p id="voucherMessage" class="voucher-message" role="status"></p>
         <p class="cart-total"><span>Total</span><strong id="cartTotal">Rs. 0</strong></p>
-        <button type="button" id="checkoutButton" disabled>Proceed to checkout (<span id="checkoutItemCount">0</span>)</button>
+        <button type="button" id="checkoutButton" disabled>Proceed to checkout (<span
+            id="checkoutItemCount">0</span>)</button>
         <p class="demo-note">Demo checkout only. No real payment will be collected.</p>
       </aside>
     </div>
@@ -100,4 +120,5 @@
   <script src="../../account-nav.js" defer></script>
   <script src="../../site-motion.js" defer></script>
 </body>
+
 </html>

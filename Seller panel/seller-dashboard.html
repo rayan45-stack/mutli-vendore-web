@@ -1,113 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOIRE</title>
-    <link rel="stylesheet" href="../Seller panel/seller-dashboard.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOIRE</title>
+  <link rel="stylesheet" href="../Seller panel/seller-dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="../site-motion.css">
 </head>
-<body>
-    <nav class="navbar">
 
-        <button class="hamburger" id="hamburger"
-                aria-label="Toggle menu" aria-expanded="false">
-            <i class="fa-solid fa-bars"></i>
+<body>
+  <nav class="navbar">
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <a href="../Homepage/index.html" class="logo">NOIRÉ</a>
+
+    <!-- Navigation -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../Homepage/index.html">Home</a></li>
+      <li><a href="../Shoppage/shop.html">Shop</a></li>
+      <li class="nav-dropdown">
+        <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false"
+          aria-controls="categoriesMenu">
+          Categories
+          <i class="fa-solid fa-chevron-down small-icon"></i>
         </button>
 
-        <a href="../Homepage/index.html" class="logo">NOIRÉ</a>
+        <div class="categories-menu" id="categoriesMenu">
+          <p class="categories-menu-title">EXPLORE CATEGORIES</p>
 
-        <!-- Navigation -->
-        <ul class="nav-links" id="navLinks">
-            <li><a href="../Homepage/index.html">Home</a></li>
-            <li><a href="../Shoppage/shop.html">Shop</a></li>
-            <li class="nav-dropdown">
-                <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">
-                    Categories
-                    <i class="fa-solid fa-chevron-down small-icon"></i>
-                </button>
+          <a href="../Shoppage/shop.html?category=electronics">Electronics</a>
 
-                <div class="categories-menu" id="categoriesMenu">
-                    <p class="categories-menu-title">EXPLORE CATEGORIES</p>
+          <a href="../Shoppage/shop.html?category=fashion">Fashion</a>
 
-                    <a href="../Shoppage/shop.html?category=electronics">Electronics</a>
+          <a href="../Shoppage/shop.html?category=home">Home & Living</a>
 
-                    <a href="../Shoppage/shop.html?category=fashion">Fashion</a>
+          <a href="../Shoppage/shop.html?category=beauty">Beauty & Personal Care</a>
 
-                    <a href="../Shoppage/shop.html?category=home">Home & Living</a>
+          <a href="../Shoppage/shop.html?category=sports">Sports & Outdoors</a>
 
-                    <a href="../Shoppage/shop.html?category=beauty">Beauty & Personal Care</a>
-
-                    <a href="../Shoppage/shop.html?category=sports">Sports & Outdoors</a>
-
-                    <a href="../Shoppage/shop.html?category=books">Books & Toys</a>
-                </div>
-            </li>
-            <li class="seller-account" id="sellerAccountMenu"
-              data-home-url="../Homepage/index.html"
-              data-register-url="../Seller registration/seller-register.html"
-                data-login-url="../Login page/login.html"
-              data-dashboard-url="seller-dashboard.html"
-              data-settings-url="settings/seller-settings.html">
-              <button type="button" id="sellerNavLink" class="seller-menu-trigger"
-                aria-expanded="false" aria-controls="sellerDropdown">
-                <span class="seller-menu-label">Become a seller</span>
-                <i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i>
-              </button>
-              <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
-                <a href="seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
-                <a href="settings/seller-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a>
-                <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
-              </div>
-            </li>
-            <li><a href="#">Contacts</a></li>
-        </ul>
-
-        <!-- Search Bar -->
-        <form class="search-box" id="searchForm">
-            <button type="submit" aria-label="Search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-            <input type="search" placeholder="Search for products..."
-                   aria-label="Search for products">
-        </form>
-
-        <!-- Icons -->
-        <div class="nav-icons">
-
-            <button class="mobile-search" id="searchToggle"
-                    aria-label="Open search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-
-            <a href="../Costumer panel/customer-account.html" aria-label="Profile">
-                <i class="fa-regular fa-user"></i>
-            </a>
-
-            <a href="../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist">
-                <i class="fa-regular fa-heart"></i>
-            </a>
-
-            <a href="../Shoppage/cart/cart.html" class="bag" aria-label="Shopping bag">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span class="cart-count">0</span>
-            </a>
-
+          <a href="../Shoppage/shop.html?category=books">Books & Toys</a>
         </div>
+      </li>
+      <li class="seller-account" id="sellerAccountMenu" data-home-url="../Homepage/index.html"
+        data-register-url="../Seller registration/seller-register.html" data-login-url="../Login page/login.html"
+        data-dashboard-url="seller-dashboard.html" data-settings-url="settings/seller-settings.html">
+        <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false"
+          aria-controls="sellerDropdown">
+          <span class="seller-menu-label">Become a seller</span>
+          <i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i>
+        </button>
+        <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
+          <a href="seller-dashboard.html" data-seller-destination="dashboard"><i
+              class="fa-solid fa-house"></i>Dashboard</a>
+          <a href="settings/seller-settings.html" data-seller-destination="settings"><i
+              class="fa-solid fa-gear"></i>Settings</a>
+          <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+        </div>
+      </li>
+      <li><a href="#">Contacts</a></li>
+    </ul>
 
-        <!-- Mobile Search -->
-        <form class="mobile-search-box" id="mobileSearchBox">
-            <input type="search" placeholder="Search for products..."
-                   aria-label="Search for products">
-            <button type="submit" aria-label="Search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-        </form>
-    </nav>
+    <!-- Search Bar -->
+    <form class="search-box" id="searchForm">
+      <button type="submit" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <input type="search" placeholder="Search for products..." aria-label="Search for products">
+    </form>
+
+    <!-- Icons -->
+    <div class="nav-icons">
+
+      <button class="mobile-search" id="searchToggle" aria-label="Open search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <a href="../Costumer panel/customer-account.html" aria-label="Profile">
+        <i class="fa-regular fa-user"></i>
+      </a>
+
+      <a href="../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist">
+        <i class="fa-regular fa-heart"></i>
+      </a>
+
+      <a href="../Shoppage/cart/cart.html" class="bag" aria-label="Shopping bag">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+
+    </div>
+
+    <!-- Mobile Search -->
+    <form class="mobile-search-box" id="mobileSearchBox">
+      <input type="search" placeholder="Search for products..." aria-label="Search for products">
+      <button type="submit" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+  </nav>
 
 
-      <div class="layout">
+  <div class="layout">
 
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
@@ -214,8 +212,7 @@
             <div class="form-grid">
               <div class="form-group">
                 <label for="productName">Product Name <b>*</b></label>
-                <input type="text" id="productName" maxlength="100"
-                  placeholder="Enter product name" required>
+                <input type="text" id="productName" maxlength="100" placeholder="Enter product name" required>
               </div>
 
               <div class="form-group">
@@ -233,40 +230,34 @@
 
               <div class="form-group">
                 <label for="productPrice">Price (PKR) <b>*</b></label>
-                <input type="number" id="productPrice" min="1"
-                  step="1" placeholder="Enter price" required>
+                <input type="number" id="productPrice" min="1" step="1" placeholder="Enter price" required>
               </div>
 
               <div class="form-group">
                 <label for="productOriginalPrice">Original Price (PKR)</label>
-                <input type="number" id="productOriginalPrice" min="1"
-                  step="1" placeholder="Optional sale price">
+                <input type="number" id="productOriginalPrice" min="1" step="1" placeholder="Optional sale price">
               </div>
 
               <div class="form-group">
                 <label for="productStock">Stock Quantity <b>*</b></label>
-                <input type="number" id="productStock" min="0"
-                  step="1" placeholder="Enter quantity" required>
+                <input type="number" id="productStock" min="0" step="1" placeholder="Enter quantity" required>
               </div>
 
               <div class="form-group">
                 <label for="productColorValues">Available Colors</label>
-                <input type="text" id="productColorValues" maxlength="200"
-                  placeholder="e.g. Beige, Black, White">
+                <input type="text" id="productColorValues" maxlength="200" placeholder="e.g. Beige, Black, White">
                 <small class="option-input-hint">Optional. Separate each color with a comma.</small>
               </div>
 
               <div class="form-group full-width">
                 <label for="productSizeValues">Available Sizes</label>
-                <input type="text" id="productSizeValues" maxlength="200"
-                  placeholder="e.g. S, M, L or 40, 41, 42">
+                <input type="text" id="productSizeValues" maxlength="200" placeholder="e.g. S, M, L or 40, 41, 42">
                 <small class="option-input-hint">Optional. Separate each size with a comma.</small>
               </div>
 
               <div class="form-group full-width">
                 <label for="productDescription">Description <b>*</b></label>
-                <textarea id="productDescription" rows="4"
-                  maxlength="1000" placeholder="Write product description..."
+                <textarea id="productDescription" rows="4" maxlength="1000" placeholder="Write product description..."
                   required></textarea>
               </div>
 
@@ -277,11 +268,10 @@
                   <span>Click to upload product images</span>
                   <small>JPG, PNG or WebP — up to 5 images, 1 MB each, 2 MB total</small>
                 </label>
-                <input type="file" id="productImage"
-                  accept="image/jpeg,image/png,image/webp" multiple hidden>
-                <img id="imagePreview" class="image-preview"
-                  alt="Selected product preview" hidden>
-                <div id="imagePreviewGallery" class="image-preview-gallery" aria-label="Additional product image previews"></div>
+                <input type="file" id="productImage" accept="image/jpeg,image/png,image/webp" multiple hidden>
+                <img id="imagePreview" class="image-preview" alt="Selected product preview" hidden>
+                <div id="imagePreviewGallery" class="image-preview-gallery"
+                  aria-label="Additional product image previews"></div>
               </div>
             </div>
 
@@ -371,9 +361,10 @@
     </main>
   </div>
 
-    <script src="../Seller panel/seller.js"></script>
-    <script src="../Seller panel/seller-message-count.js" defer></script>
-    <script src="../account-nav.js" defer></script>
-    <script src="../site-motion.js" defer></script>
+  <script src="../Seller panel/seller.js"></script>
+  <script src="../Seller panel/seller-message-count.js" defer></script>
+  <script src="../account-nav.js" defer></script>
+  <script src="../site-motion.js" defer></script>
 </body>
+
 </html>

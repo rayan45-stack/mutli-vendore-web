@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="../seller-dashboard.css">
     <link rel="stylesheet" href="../My products/my-products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../../site-motion.css">
+    <link rel="stylesheet" href="../../site-motion.css">
 </head>
+
 <body>
     <nav class="navbar">
         <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -21,7 +23,8 @@
             <li><a href="../../Homepage/index.html">Home</a></li>
             <li><a href="../../Shoppage/shop.html">Shop</a></li>
             <li class="nav-dropdown">
-                <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">
+                <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false"
+                    aria-controls="categoriesMenu">
                     Categories
                     <i class="fa-solid fa-chevron-down small-icon"></i>
                 </button>
@@ -35,20 +38,22 @@
                     <a href="../../Shoppage/shop.html?category=books">Books &amp; Toys</a>
                 </div>
             </li>
-            <li class="seller-account" id="sellerAccountMenu"
-                data-home-url="../../Homepage/index.html"
+            <li class="seller-account" id="sellerAccountMenu" data-home-url="../../Homepage/index.html"
                 data-register-url="../../Seller registration/seller-register.html"
-                data-login-url="../../Login page/login.html"
-                data-dashboard-url="../seller-dashboard.html"
+                data-login-url="../../Login page/login.html" data-dashboard-url="../seller-dashboard.html"
                 data-settings-url="../settings/seller-settings.html">
-                <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false" aria-controls="sellerDropdown">
+                <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false"
+                    aria-controls="sellerDropdown">
                     <span class="seller-menu-label">Become a seller</span>
                     <i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i>
                 </button>
                 <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
-                    <a href="../seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
-                    <a href="../settings/seller-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a>
-                    <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+                    <a href="../seller-dashboard.html" data-seller-destination="dashboard"><i
+                            class="fa-solid fa-house"></i>Dashboard</a>
+                    <a href="../settings/seller-settings.html" data-seller-destination="settings"><i
+                            class="fa-solid fa-gear"></i>Settings</a>
+                    <button type="button" id="sellerLogoutButton"><i
+                            class="fa-solid fa-right-from-bracket"></i>Logout</button>
                 </div>
             </li>
             <li><a href="#">Contacts</a></li>
@@ -63,8 +68,10 @@
             <button class="mobile-search" id="searchToggle" aria-label="Open search">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <a href="../../Costumer panel/customer-account.html" aria-label="Profile"><i class="fa-regular fa-user"></i></a>
-            <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+            <a href="../../Costumer panel/customer-account.html" aria-label="Profile"><i
+                    class="fa-regular fa-user"></i></a>
+            <a href="../../Costumer panel/customer-account.html#wishlist" aria-label="Wishlist"><i
+                    class="fa-regular fa-heart"></i></a>
             <a href="../../Shoppage/cart/cart.html" class="bag" aria-label="Shopping bag">
                 <i class="fa-solid fa-bag-shopping"></i>
                 <span class="cart-count">0</span>
@@ -165,8 +172,9 @@
     </div>
 
     <script src="../My products/my-products.js" defer></script>
-        <script src="../seller-message-count.js" defer></script>
-        <script src="../../account-nav.js" defer></script>
-        <script src="../../site-motion.js" defer></script>
+    <script src="../seller-message-count.js" defer></script>
+    <script src="../../account-nav.js" defer></script>
+    <script src="../../site-motion.js" defer></script>
 </body>
+
 </html>

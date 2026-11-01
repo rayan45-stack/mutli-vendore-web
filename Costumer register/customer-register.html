@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customer Registration | NOIRÉ</title>
-  <link rel="stylesheet" href="customer-register.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../site-motion.css">
-</head>
-<body>
-  <nav class="navbar">
 
-        <button class="hamburger" id="hamburger"
-                aria-label="Toggle menu" aria-expanded="false">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration | NOIRÉ</title>
+    <link rel="stylesheet" href="customer-register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../site-motion.css">
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
             <i class="fa-solid fa-bars"></i>
         </button>
 
@@ -23,7 +24,8 @@
             <li><a href="../Homepage/index.html">Home</a></li>
             <li><a href="../Shoppage/shop.html">Shop</a></li>
             <li class="nav-dropdown">
-                <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false" aria-controls="categoriesMenu">
+                <button type="button" class="categories-toggle" id="categoriesToggle" aria-expanded="false"
+                    aria-controls="categoriesMenu">
                     Categories
                     <i class="fa-solid fa-chevron-down small-icon"></i>
                 </button>
@@ -44,21 +46,23 @@
                     <a href="../Shoppage/shop.html?category=books">Books & Toys</a>
                 </div>
             </li>
-            <li class="seller-account" id="sellerAccountMenu"
-                data-home-url="../Homepage/index.html"
+            <li class="seller-account" id="sellerAccountMenu" data-home-url="../Homepage/index.html"
                 data-register-url="../Seller registration/seller-register.html"
                 data-login-url="../Login page/login.html?role=seller"
                 data-dashboard-url="../Seller panel/seller-dashboard.html"
                 data-settings-url="../Seller panel/settings/seller-settings.html">
-                <button type="button" id="sellerNavLink" class="seller-menu-trigger"
-                    aria-expanded="false" aria-controls="sellerDropdown">
+                <button type="button" id="sellerNavLink" class="seller-menu-trigger" aria-expanded="false"
+                    aria-controls="sellerDropdown">
                     <span class="seller-menu-label">Become a seller</span>
                     <i class="fa-solid fa-chevron-down small-icon" aria-hidden="true"></i>
                 </button>
                 <div class="seller-dropdown" id="sellerDropdown" aria-label="Seller account options" hidden>
-                    <a href="../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
-                    <a href="../Seller panel/Payment method/payment-settings.html" data-seller-destination="settings"><i class="fa-solid fa-gear"></i>Settings</a>
-                    <button type="button" id="sellerLogoutButton"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+                    <a href="../Seller panel/seller-dashboard.html" data-seller-destination="dashboard"><i
+                            class="fa-solid fa-house"></i>Dashboard</a>
+                    <a href="../Seller panel/Payment method/payment-settings.html" data-seller-destination="settings"><i
+                            class="fa-solid fa-gear"></i>Settings</a>
+                    <button type="button" id="sellerLogoutButton"><i
+                            class="fa-solid fa-right-from-bracket"></i>Logout</button>
                 </div>
             </li>
             <li><a href="#">Contacts</a></li>
@@ -69,15 +73,13 @@
             <button type="submit" aria-label="Search">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <input type="search" placeholder="Search for products..."
-                   aria-label="Search for products">
+            <input type="search" placeholder="Search for products..." aria-label="Search for products">
         </form>
 
         <!-- Icons -->
         <div class="nav-icons">
 
-            <button class="mobile-search" id="searchToggle"
-                    aria-label="Open search">
+            <button class="mobile-search" id="searchToggle" aria-label="Open search">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
 
@@ -98,8 +100,7 @@
 
         <!-- Mobile Search -->
         <form class="mobile-search-box" id="mobileSearchBox">
-            <input type="search" placeholder="Search for products..."
-                   aria-label="Search for products">
+            <input type="search" placeholder="Search for products..." aria-label="Search for products">
             <button type="submit" aria-label="Search">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
@@ -191,13 +192,8 @@
                     <div class="form-group">
                         <label for="fullName">Full Name <span>*</span></label>
                         <div class="input-icon"><i class="fa-regular fa-user"></i>
-                            <input
-                                type="text"
-                                id="fullName"
-                                name="fullName"
-                                placeholder="Enter your full name"
-                                autocomplete="name"
-                                required>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                                autocomplete="name" required>
                         </div>
                     </div>
 
@@ -205,13 +201,8 @@
                     <div class="form-group">
                         <label for="email">Email Address <span>*</span></label>
                         <div class="input-icon"><i class="fa-regular fa-envelope"></i>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Enter your email address"
-                                autocomplete="email"
-                                required>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address"
+                                autocomplete="email" required>
                         </div>
                     </div>
 
@@ -219,12 +210,7 @@
                     <div class="form-group">
                         <label for="phone">Phone Number <span>*</span></label>
                         <div class="input-icon"><i class="fa-solid fa-phone"></i>
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                placeholder="03XX XXXXXXX"
-                                autocomplete="tel"
+                            <input type="tel" id="phone" name="phone" placeholder="03XX XXXXXXX" autocomplete="tel"
                                 required>
                         </div>
                     </div>
@@ -233,14 +219,8 @@
                     <div class="form-group">
                         <label for="password">Password <span>*</span></label>
                         <div class="input-icon"><i class="fa-solid fa-lock"></i>
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                placeholder="Create a strong password"
-                                minlength="8"
-                                autocomplete="new-password"
-                                required>
+                            <input type="password" id="password" name="password" placeholder="Create a strong password"
+                                minlength="8" autocomplete="new-password" required>
                         </div>
                     </div>
 
@@ -284,4 +264,5 @@
     <script src="../account-nav.js" defer></script>
     <script src="../site-motion.js" defer></script>
 </body>
+
 </html>

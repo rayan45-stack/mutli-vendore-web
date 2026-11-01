@@ -443,7 +443,7 @@
       shippedRate === null ? "No shipment data" : `${shippedRate}% on time`;
     const averageResponse = chatPerformance.responseTimes.length
       ? chatPerformance.responseTimes.reduce((sum, duration) => sum + duration, 0) /
-        chatPerformance.responseTimes.length
+      chatPerformance.responseTimes.length
       : null;
     document.getElementById("sellerChatResponseTime").textContent =
       averageResponse === null ? "No replies yet" : formatResponseTime(averageResponse);

@@ -1,79 +1,79 @@
 const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("navLinks");
-        const searchToggle = document.getElementById("searchToggle");
-        const mobileSearchBox = document.getElementById("mobileSearchBox");
+const navLinks = document.getElementById("navLinks");
+const searchToggle = document.getElementById("searchToggle");
+const mobileSearchBox = document.getElementById("mobileSearchBox");
 
-        hamburger.addEventListener("click", () => {
-            const open = navLinks.classList.toggle("show");
+hamburger.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("show");
 
-            hamburger.setAttribute("aria-expanded", open);
-            hamburger.innerHTML = open
-                ? '<i class="fa-solid fa-xmark"></i>'
-                : '<i class="fa-solid fa-bars"></i>';
-        });
+  hamburger.setAttribute("aria-expanded", open);
+  hamburger.innerHTML = open
+    ? '<i class="fa-solid fa-xmark"></i>'
+    : '<i class="fa-solid fa-bars"></i>';
+});
 
-        searchToggle.addEventListener("click", () => {
-            mobileSearchBox.classList.toggle("show-search");
+searchToggle.addEventListener("click", () => {
+  mobileSearchBox.classList.toggle("show-search");
 
-            if (mobileSearchBox.classList.contains("show-search")) {
-                mobileSearchBox.querySelector("input").focus();
-            }
-        });
+  if (mobileSearchBox.classList.contains("show-search")) {
+    mobileSearchBox.querySelector("input").focus();
+  }
+});
 
-        navLinks.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                navLinks.classList.remove("show");
-                hamburger.setAttribute("aria-expanded", "false");
-                hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-            });
-        });
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  });
+});
 
-        document.querySelectorAll("#searchForm, #mobileSearchBox")
-            .forEach(form => {
-                form.addEventListener("submit", event => {
-                    event.preventDefault();
+document.querySelectorAll("#searchForm, #mobileSearchBox")
+  .forEach(form => {
+    form.addEventListener("submit", event => {
+      event.preventDefault();
 
-                    const query = form.querySelector("input").value.trim();
+      const query = form.querySelector("input").value.trim();
 
-                    if (query) {
-                        window.location.href = "../Shoppage/shop.html?search=" + encodeURIComponent(query);
-                    }
-                });
-            });
+      if (query) {
+        window.location.href = "../Shoppage/shop.html?search=" + encodeURIComponent(query);
+      }
+    });
+  });
 
-            
+
 /* ===== CATEGORIES DROPDOWN ===== */
 
-        const categoriesToggle = document.getElementById("categoriesToggle");
-        const categoriesDropdown = document.querySelector(".nav-dropdown");
+const categoriesToggle = document.getElementById("categoriesToggle");
+const categoriesDropdown = document.querySelector(".nav-dropdown");
 
-        if (categoriesToggle && categoriesDropdown) {
-            categoriesToggle.addEventListener("click", () => {
-                const isOpen = categoriesDropdown.classList.toggle("open");
+if (categoriesToggle && categoriesDropdown) {
+  categoriesToggle.addEventListener("click", () => {
+    const isOpen = categoriesDropdown.classList.toggle("open");
 
-                categoriesToggle.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
-        });
+    categoriesToggle.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+  });
 
-            document.addEventListener("click", (event) => {
-                if (!categoriesDropdown.contains(event.target)) {
-                    categoriesDropdown.classList.remove("open");
-                    categoriesToggle.setAttribute("aria-expanded", "false");
-                }
-            });
+  document.addEventListener("click", (event) => {
+    if (!categoriesDropdown.contains(event.target)) {
+      categoriesDropdown.classList.remove("open");
+      categoriesToggle.setAttribute("aria-expanded", "false");
+    }
+  });
 
-            document.addEventListener("keydown", (event) => {
-                if (event.key === "Escape") {
-                    categoriesDropdown.classList.remove("open");
-                    categoriesToggle.setAttribute("aria-expanded", "false");
-                    categoriesToggle.focus();
-                }
-            });
-        }
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      categoriesDropdown.classList.remove("open");
+      categoriesToggle.setAttribute("aria-expanded", "false");
+      categoriesToggle.focus();
+    }
+  });
+}
 
-        
+
 /* =========================================
    NOIRÉ — SELLER DASHBOARD JAVASCRIPT
 ========================================= */
