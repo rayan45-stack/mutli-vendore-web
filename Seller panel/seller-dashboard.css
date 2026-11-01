@@ -456,6 +456,9 @@ body {
   align-items: center;
   gap: 9px;
   font-size: 10px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* STATS */
@@ -1677,8 +1680,6 @@ body {
   .today-date {
     padding: 5px;
     font-size: 8px;
-    max-width: 75px;
-    flex-wrap: wrap;
   }
 
   .stats-grid {
